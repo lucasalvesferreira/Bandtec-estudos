@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista - I</title>
+    <style>
+        .espaço {
+            margin-bottom: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Tenta uma fruta aí</h2>
+
+    Insira uma fruta: <input id="ip_fruta" type="text" placeholder="Nome da fruta"> <br>
+
+    <button onclick="pesquisar()">Pesquisar</button>
+
+    <div class="espaço"></div>
+
+</body>
+
+</html>
+<script>
+
+
+    function pesquisar() {
+
+        var fruta = [, "uva", "manga", "abacaxi", "pera", "caju"];
+
+        if (fruta.indexOf(ip_fruta.value) >= 0) {
+            alert(`A fruta ${ip_fruta.value} está na lista`)
+        }
+        else {
+            alert(`Não existe a fruta ${ip_fruta.value} na lista`)
+        }
+
+        ip_fruta.value = ``;
+    }
+</script>
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <h2>Bora viajar</h2>
+
+    Destino da viagem: <input id="ip_destino" type="text" placeholder="Destino"> <br>
+
+    <button onclick="adicionar()">Adicionar</button> <br>
+
+    <button onclick="primeira()">Primeira Viagem</button>
+    <button onclick="segunda()">Terceira Viagem</button>
+    <button onclick="terceira()">Última Viagem</button>
+
+    <div class="espaço" id="mostrar_2"></div>
+</body>
+
+</html>
+<script>
+
+    var destino = [];
+
+    function adicionar() {
+
+        destino.push(ip_destino.value);
+
+        alert(`${destino}`)
+
+        ip_destino.value = ``;
+    }
+
+    function primeira() {
+
+        if (destino[0]) {
+            mostrar_2.innerHTML = `Sua primeira viagem foi para ${destino[0]}`
+        }
+        else {
+            alert("Ainda não viajou")
+        }
+    }
+
+    function segunda() {
+
+        if (destino[2]) {
+            mostrar_2.innerHTML = `Sua terceira viagem foi para ${destino[2]}`
+        }
+        else {
+            alert("Você ainda não fez 3 viagens")
+        }
+    }
+
+    function terceira() {
+
+        if (destino[destino.length - 1]) {
+            mostrar_2.innerHTML = `Sua última viagem foi para ${destino[destino.length - 1]}`
+        }
+        else {
+            alert("Você ainda não viajou")
+        }
+    }
+</script>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> </title>
+</head>
+
+<body>
+    <h2>Onde você morou?</h2>
+
+    Insira o bairro que você já morou: <input type="text" placeholder="Insira o bairro" id="ip_bairro"> <br>
+
+    <button onclick="cadastro()">Cadastrar bairro</button> <br>
+
+    Insira o número do bairro: <input type="number" placeholder="Insira um número" id="ip_número"> <br>
+
+    <button onclick="relembrar()">Relembrar moradia</button>
+
+    <div class="espaço" id="mostrar_3"></div>
+</body>
+
+</html>
+<script>
+
+    var bairro = [];
+
+    function cadastro() {
+
+        bairro.push(ip_bairro.value);
+        alert(`${bairro}`)
+        ip_bairro.value = ``;
+    }
+
+    function relembrar() {
+
+        if (bairro[ip_número.value - 1] == undefined) {
+            alert(`Você ainda não morrou no bairro ${ip_número.value}° `)
+        }
+        else {
+            mostrar_3.innerHTML += `Seu ${ip_número.value}° bairro foi em : ${bairro[ip_número.value - 1]} <br>`
+        }
+    }
+</script>
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <h2>Vamos assistir netflix sem tv?</h2>
+
+    Insira seus filmes favoritos: <input id="ip_filme" type="text" placeholder="Filme preferido"> <br>
+
+    <button onclick="cadastro()">Cadastrar</button>
+
+    <div class="espaço" id="mostrar_6"></div>
+</body>
+
+</html>
+<script>
+
+    var filme = [];
+
+    function cadastro() {
+
+        filme.push(ip_filme.value);
+        alert(`${filme}`)
+
+        ip_filme.value = ``;
+        mostrar_6.innerHTML = ``;
+
+
+        for (var conta = 0; conta < filme.length; conta++) {
+            mostrar_6.innerHTML += `${conta + 1}° ${filme[conta]} <br>`
+        }
+    }
+</script>
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <h2>Atenção para chamada</h2>
+
+    Insira o nome do aluno: <input id="ip_aluno" type="text" placeholder="Nome do aluno"> <br>
+
+    <button onclick="chamar()">Chamada</button> <br>
+
+    <div class="espaço" id="mostrar_8"></div>
+</body>
+
+</html>
+<script>
+
+    var aluno = [];
+
+    function chamar() {
+
+        aluno.push(ip_aluno.value);
+        alert(`${aluno}`)
+
+        ip_aluno.value = ``;
+        mostrar_8.innerHTML = ``;
+
+
+        for (var contagem = aluno.length - 1; contagem >= 0; contagem--) {
+
+            mostrar_8.innerHTML += `${aluno[contagem]} <br>`
+        }
+    }
+</script>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <h2>Vai pegar qual busão</h2>
+
+    Insira a linha de onibus: <input id="ip_busao" type="text" placeholder="Linha de onibus"> <br>
+
+    <button onclick="gravar()">Gravar Buzão</button> <br>
+
+
+    Pesquise por linhas: <input id="ip_linha" type="text" placeholder="Pesquisar"> <br>
+
+    <button onclick="pesquisar()">Pesquisar</button> <br>
+
+    <div class="espaço" id="mostrar_10"></div>
+</body>
+
+</html>
+<script>
+
+    var linha = [];
+
+    function gravar() {
+
+        linha.push(ip_busao.value);
+        alert(`${linha}`);
+
+        ip_busao.value = ``;
+        mostrar_10.innerHTML = ``;
+
+
+        for (var contar = 0; contar < linha.length; contar++) {
+            mostrar_10.innerHTML += `${contar + 1}° ${linha[contar]} <br>`
+        }
+    }
+
+    function pesquisar() {
+
+        var vezes = [];
+
+        var total = 0;
+
+        for (var index = 0; index <= linha.length; index++) {
+
+            if (linha[index] == ip_linha.value) {
+
+                total++;
+
+                vezes.push(index + 1);
+
+                mostrar_10.innerHTML = `Você já pegou essa linha ${total} vezes, nessa ordem: ${vezes}`
+            }
+        }
+
+    }
+</script>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <h2>Quem é meu pai?</h2>
+
+    Insira o nome do seu filho: <input id="ip_nome" type="text" placeholder="Nome do Filho"> <br>
+
+    <button onclick="inserir()">Cadastrar</button> <br>
+
+    <button onclick="atualizar()">Atualizar Família</button>
+
+    <div class="espaço" id="mostrar_12"></div>
+</body>
+
+</html>
+<script>
+    var filho = [];
+
+    function inserir() {
+
+        var idx = filho.indexOf(ip_nome.value)
+
+        if (idx == -1) {
+            filho.push(ip_nome.value);
+            alert(`${filho}`);
+        }
+        else {
+            alert(`Não pode mais de 1 filho com o mesmo nome!`)
+        }
+
+        ip_nome.value = ``;
+
+    }
+
+
+    function atualizar() {
+
+        var Y = (filho.length * 3000).toFixed(2);
+
+        var Z = (filho.length * 1500).toFixed(2);
+
+        mostrar_12.innerHTML = ` Você tem <b> ${filho.length} </b> filhos <br>
+        Seu custo mensal será aproximadamente <b> R$${Y} </b> se colocar eles em escola particular 
+        ou <b> R$${Z} </b> se eles estudarem em escola pública`;
+    }
+</script>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <h2>Vem jogar no Vasco!</h2>
+
+    Indique o resultado:
+    <select id="resultado">
+        <option value="">Resultado</option>
+        <option value="Ganhou">Vitória</option>
+        <option value="Empatou">Empate</option>
+        <option value="Perdeu">Derrota</option>
+    </select> <br>
+
+    <button onclick="registrar()">Registrar Jogo</button> <br><br>
+
+    Indique qual jogo que saber resultado: <input onkeyup="revelar()" id="ip_jogo" type="text" placeholder="Qual jogo?">
+    <br>
+
+    <div id="mostrar_13_2"></div> <br>
+
+    <div class="espaço" id="mostrar_13"></div>
+</body>
+
+</html>
+<script>
+
+    var brasileiro = [];
+    var escolhas = [];
+
+    var vitória = 0;
+    var empate = 0;
+    var derrotas = 0;
+    var derrota = 0;
+
+    var total = 0;
+    var auxiliar = 0;
+
+
+    function registrar() {
+
+
+        if (resultado.value == "Ganhou") {
+            brasileiro.push(vitória++)
+            escolhas.push(resultado.value);
+            alert(`${brasileiro}`)
+            total += 3;
+            auxiliar += 3;
+            var Aproveitamento = (Number(total) / Number(auxiliar)) * 100;
+
+        }
+        else if (resultado.value == "Empatou") {
+            brasileiro.push(empate++)
+            escolhas.push(resultado.value);
+            alert(`${brasileiro}`)
+            total++;
+            auxiliar += 3;
+            var Aproveitamento = (Number(total) / Number(auxiliar)) * 100;
+        }
+        else if (resultado.value == "Perdeu") {
+            brasileiro.push(derrotas += 0)
+            escolhas.push(resultado.value);
+            derrota++
+            alert(`${brasileiro}`)
+            auxiliar += 3;
+            var Aproveitamento = (Number(total) / Number(auxiliar)) * 100;
+        }
+
+        alert(`${auxiliar}`)
+
+
+        mostrar_13.innerHTML = ` 
+        O time teve: ${vitória} vitórias, ${empate} empates, ${derrota} derrotas <br>
+
+        Pontuação total: ${total} pontos <br>
+
+        Aproveitamento: ${Aproveitamento.toFixed()}%`;
+
+    }
+
+    function revelar() {
+
+
+        var jogo = Number(ip_jogo.value);
+
+        var saida = `${"Ganhou" || "Empatou" || "Perdeu"}`;
+
+
+        if (brasileiro.length < jogo) {
+            mostrar_13_2.innerHTML = `Não foi cadastrado um ${jogo}º jogo`;
+        }
+        else if (ip_jogo.value == '') {
+            mostrar_13_2.innerHTML == '';
+        }
+        else {
+            mostrar_13_2.innerHTML = `No ${jogo}º jogo, o time ${escolhas[ip_jogo.value - 1]} <br>`;
+        }
+    }
+</script>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <h2>Eletrolux?</h2>
+
+    Insira o Nome do Produto: <input id="ip_produto" type="text" placeholder="Nome"> <br>
+    Insira o Preco do Produto: <input id="ip_preco" type="number" placeholder="Preco"> <br>
+
+    <button onclick="guardar()">Cadastrar</button> <br>
+    <button onclick="relatar()">Relátorio de estoque</button> <br>
+
+    <div id="mostrar_14"></div> <br>
+    <div class="espaço" id="mostrar_14_2"></div> <br>
+
+</body>
+
+</html>
+<script>
+
+    var produto = [];
+    var preco = [];
+    var calculo = 0;
+    var media = 0;
+    var maior = 0;
+
+
+    function guardar() {
+        
+        var preco_produto = ip_preco.value;
+        
+        produto.push(ip_produto.value);
+        preco.push(Number(preco_produto));
+        
+        ip_produto.value = ``;
+        ip_preco.value = ``;
+    }
+    
+    function relatar() {
+        
+        mostrar_14.innerHTML = ``;
+        mostrar_14_2.innerHTML = ``;
+
+        var s;
+
+        mostrar_14.innerHTML += `Total de produtos = ${produto.length} <br>`;
+
+        for (var index = 0; index < produto.length; index++) {
+            mostrar_14.innerHTML += `
+            Produto ${index + 1}: ${produto[index]} <br> 
+            Preco de compra: <b> R$${preco[index]} </b>. Vender por <b> R$${(preco[index] * 1.25).toFixed(2)} </b>
+            <br> <br>`
+
+        }
+
+        for (s = 0; s < preco.length; s++) {
+            calculo += preco[s];
+            media = calculo / preco.length;
+
+            if (preco[s] > maior) {
+                maior = preco[s]
+            }
+        }
+
+        var menor = calculo;
+
+        for (s= 0; s < preco.length; s++) {
+            if (preco[s] < menor) {
+                menor = preco[s]
+            }
+
+        }   
+
+        
+        mostrar_14_2.innerHTML += `<br> 
+        a) O nome do produto mais caro: ${produto[preco.indexOf(maior)]} <br>
+        
+        b) O nome do produto mais barato: ${produto[preco.indexOf(menor)]} <br>
+        
+        c) A soma dos precos: ${calculo.toFixed(2)} <br>
+        
+        d) A média de preco de venda dos produtos: ${media.toFixed(2)}`;
+    }
+</script>
+

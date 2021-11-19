@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <h2>Vem jogar no Vasco!</h2>
+
+    Indique o resultado:
+    <select id="resultado">
+        <option value="">Resultado</option>
+        <option value="Ganhou">Vitória</option>
+        <option value="Empatou">Empate</option>
+        <option value="Perdeu">Derrota</option>
+    </select> <br>
+
+    <button onclick="registrar()">Registrar Jogo</button> <br><br>
+
+    Indique qual jogo que saber resultado: <input onkeyup="revelar()" id="ip_jogo" type="text" placeholder="Qual jogo?">
+    <br>
+
+    <div id="mostrar_13_2"></div> <br>
+
+    <div class="espaço" id="mostrar_13"></div>
+</body>
+
+</html>
+<script>
+
+    var brasileiro = [];
+    var escolhas = [];
+
+    var vitória = 0;
+    var empate = 0;
+    var derrotas = 0;
+    var derrota = 0;
+
+    var total = 0;
+    var auxiliar = 0;
+
+
+    function registrar() {
+
+
+        if (resultado.value == "Ganhou") {
+            brasileiro.push(vitória++)
+            escolhas.push(resultado.value);
+            alert(`${brasileiro}`)
+            total += 3;
+            auxiliar += 3;
+            var Aproveitamento = (Number(total) / Number(auxiliar)) * 100;
+
+        }
+        else if (resultado.value == "Empatou") {
+            brasileiro.push(empate++)
+            escolhas.push(resultado.value);
+            alert(`${brasileiro}`)
+            total++;
+            auxiliar += 3;
+            var Aproveitamento = (Number(total) / Number(auxiliar)) * 100;
+        }
+        else if (resultado.value == "Perdeu") {
+            brasileiro.push(derrotas += 0)
+            escolhas.push(resultado.value);
+            derrota++
+            alert(`${brasileiro}`)
+            auxiliar += 3;
+            var Aproveitamento = (Number(total) / Number(auxiliar)) * 100;
+        }
+
+        alert(`${auxiliar}`)
+
+
+        mostrar_13.innerHTML = ` 
+        O time teve: ${vitória} vitórias, ${empate} empates, ${derrota} derrotas <br>
+
+        Pontuação total: ${total} pontos <br>
+
+        Aproveitamento: ${Aproveitamento.toFixed()}%`;
+
+    }
+
+    function revelar() {
+
+
+        var jogo = Number(ip_jogo.value);
+
+        var saida = `${"Ganhou" || "Empatou" || "Perdeu"}`;
+
+
+        if (brasileiro.length < jogo) {
+            mostrar_13_2.innerHTML = `Não foi cadastrado um ${jogo}º jogo`;
+        }
+        else if (ip_jogo.value == '') {
+            mostrar_13_2.innerHTML == '';
+        }
+        else {
+            mostrar_13_2.innerHTML = `No ${jogo}º jogo, o time ${escolhas[ip_jogo.value - 1]} <br>`;
+        }
+    }
+</script>

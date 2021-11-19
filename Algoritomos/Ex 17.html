@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 17</title>
+
+    <style>
+        * {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="primeiro">
+        <h1>Análise de performance de Alunos - Registro</h1>
+
+        Entre com o Nome do aluno <input id="ip_nome" type="text" placeholder="Nome"> <br><br>
+
+        Entre com a Nota do aluno <input id="ip_nota" type="text" placeholder="Nota"> <br><br>
+
+
+        <button onclick="registro()" style="margin-right: 4%;">Registrar</button>
+        <button onclick="analisar()">Analisar</button> <br>
+
+        <div id="mostrar_17"></div>
+    </div>
+
+    <div id="segundo" style="display: none;">
+        <h1>Análise de performance de Alunos - Pesquisa</h1>
+
+        Entre com o intervalo de notas: 
+        <input id="ip_comeco" type="text" placeholder="De" style="margin-right: 2%;">
+        <input id="ip_final" type="text" placeholder="Até"> <br><br>
+
+        <button onclick="pesquisa()">Pesquisar</button>
+
+        <div id="mostrar_17_2"></div> <br>
+
+        <div id="mostrar_17_3"></div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    var nome = [];
+    var nota = [];
+
+    function registro() {
+        mostrar_17.innerHTML = ``;
+    
+        var aluno = ip_nome.value;
+        var resultado = ip_nota.value;
+
+
+        if (aluno == '') {
+            alert("Insira um nome para continuar")
+        }
+        else if (resultado < 0 || resultado > 10) {
+            alert("Insira uma nota válida para continuar")
+        }
+        else {
+            nome.push(ip_nome.value);
+            nota.push(ip_nota.value);
+
+            for (var index = nome.length - 1; index >= 0; index--) {
+
+                mostrar_17.innerHTML += `${nome[index]} - ${nota[index]}  <br>`;
+
+            }
+        }
+        ip_nome.value = "";
+        ip_nota.value = "";
+    }
+
+    function analisar() {
+        primeiro.style.display = "none";
+        segundo.style.display = "block";
+
+    }
+
+    var intervalo = [];
+
+    function pesquisa() {
+        var inicio = Number(ip_comeco.value);
+        var final = Number(ip_final.value);
+
+        if (inicio < 0 || inicio > 10) {
+            alert("Insira um número de 0 até 10")
+        }
+        else if (final < 0 || inicio > 10) {
+            alert("Insira um número de 0 até 10")
+        }
+        else {
+            var soma = 0;
+            var max = 0;
+            var min = 10;
+
+            for (var i = 0; i < nota.length; i++) {
+              soma += Number(nota.length[1])
+              
+              if (nome[i] >= inicio && nota[i] <= final ) {
+                  intervalo.push(nota[i])
+                  mostrar_17_2.innerHTML += `O aluno ${nome[nota.indexOf(nota[i])]} ficou com a nota ${nota[i]}<br>`;
+              }
+              if (max < Number(nota[i])) {
+                  max = Number(nota[i]);
+              }
+              if (min > Number(nota[i])) {
+                  min = Number(nota[i]);
+              }
+            }
+
+            var média = soma / nota.length;
+         
+            mostrar_17_3.innerHTML = `
+            Total de alunos registrados: ${nome.length} <br>
+
+            Total de alunos listado: ${intervalo.length} <br>
+
+            Maior Nota = ${max} <br>
+
+            Menor Nota = ${min} <br>
+
+            Média da Nota = ${média} <br>`;
+        }
+    }
+</script>

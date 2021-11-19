@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance</title>
+    <style>
+        * {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="primeiraParte">
+        <h1>Análise de performance de alunos - Registro</h1>
+
+        <label for="inputNomeAluno">Entre com o nome do aluno: </label> 
+        <input type="text" id="inputNomeAluno"><br><br>
+
+        <label for="inputNotaAluno">Entre com a nota do aluno: </label>
+        <input type="text" id="inputNotaAluno"><br><br>
+
+        <button onclick="registrar()" style="margin-right: 3%;">Registrar</button>
+        <button onclick="analisar()">Analisar</button>
+        <br>
+
+        <div id="textoResultados"></div>
+    </div>
+
+    <div id="segundaParte" style="display: none;">
+        <h1>Análise de performance dos alunos - Pesquisa</h1>
+
+        <label>Entre com o intervalo de notas: </label> 
+        <input id="inputPrimeiroNumero" style="margin-right: 3%;" placeholder="De">
+        <input type="text" id="inputUltimoNumero" placeholder="Até">
+        <br><br>
+
+        <button onclick="pesquisar()">Pesquisar</button>
+        <div id="textoIntervalo"></div><br>
+        <div id="textoResultadoAnalise" style="display: none;">
+            Total de alunos registrados: <span id="textoAlunosRegistrados"></span><br>
+            Total de alunos listado: <span id="textoAlunosListados"></span><br>
+            Maior Nota = <span id="textoMaiorNota"></span><br>
+            Menor Nota = <span id="textoMenorNota"></span><br>
+            Média da Nota = <span id="textoMediaNotas"></span><br>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    let listaNomes = [];
+    let listaNotas = [];
+
+    function registrar() {
+        document.getElementById("textoResultados").innerHTML = "";
+        let nomeInserido = document.getElementById("inputNomeAluno").value;
+        let notaInserida = document.getElementById("inputNotaAluno").value;
+
+        if (nomeInserido == "") {
+            alert("Insira o nome!")
+        } else if (notaInserida < 0 || notaInserida > 10) {
+            alert("A nota deve estar entre 0 e 10!")
+        } else {
+            listaNomes.push(nomeInserido);
+            listaNotas.push(notaInserida);
+
+            for (let i = listaNomes.length - 1; i >= 0; i--) {
+                document.getElementById("textoResultados").innerHTML += `${listaNomes[i]} - ${listaNotas[i]}<br>`;
+            }
+        }
+    }
+
+    function analisar() {
+        document.getElementById("primeiraParte").style.display = "none";
+        document.getElementById("segundaParte").style.display = "block";        
+    }
+
+    let notasIntervalo = [];
+
+    function pesquisar() {
+        let primeiroNumero = document.getElementById("inputPrimeiroNumero").value;
+        let ultimoNumero = document.getElementById("inputUltimoNumero").value;
+
+        if (primeiroNumero < 0 || primeiroNumero > 10) {
+            alert("O primeiro número deve estar entre 0 e 10!");
+        } else if (ultimoNumero < primeiroNumero) {
+            alert("O segundo número deve ser maior que o primeiro número!");
+        } else {
+            let sum = 0;
+            let notaMax = 0;
+            let notaMin = 10;
+
+            for (let i = 0; i < listaNotas.length; i++) {
+                sum += Number(listaNotas[i]);
+
+                if (listaNotas[i] >= primeiroNumero && listaNotas[i] <= ultimoNumero) {
+                    notasIntervalo.push(listaNotas[i]);
+                    document.getElementById("textoIntervalo").innerHTML += 
+                    `O aluno ${listaNomes[listaNotas.indexOf(listaNotas[i])]} ficou com a nota ${listaNotas[i]}<br>`;
+                }
+
+                if (notaMax < Number(listaNotas[i])) {
+                    notaMax = Number(listaNotas[i]);
+                }
+                if (notaMin > Number(listaNotas[i])) {
+                    notaMin = Number(listaNotas[i]);
+                }
+            }
+
+            let avg = sum / listaNotas.length;
+
+            document.getElementById("textoAlunosRegistrados").textContent = listaNomes.length;
+            document.getElementById("textoAlunosListados").textContent = notasIntervalo.length;
+            document.getElementById("textoMaiorNota").textContent = notaMax;
+            document.getElementById("textoMenorNota").textContent = notaMin;
+            document.getElementById("textoMediaNotas").textContent = avg;
+
+            document.getElementById("textoResultadoAnalise").style.display = "block";
+        }
+    }
+</script>
