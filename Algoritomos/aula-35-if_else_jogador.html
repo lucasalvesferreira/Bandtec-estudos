@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else_if</title>
+</head>
+<body>
+
+        <h2 style="color: blueviolet;"> Aula Else_if - Atacante </h2>  
+<br>
+        <b> Insira a Quantidade de jogos </b> <input id="ipt_jogos">
+<br>
+        <b> Insira a Quantidade de Gols </b> <input id="ipt_gols">
+<br>
+            <button onclick="analisar()" style="background-color: blue;color: brown;"> Classificar Atacante</button>
+            
+
+</body>
+</html>
+
+<script>
+    function analisar() {
+        var ax_media = ipt_gols.value / ipt_jogos.value;
+
+             if     (ax_media > 0.6) {
+                alert (" Joga muito cara!");
+        }   
+        else if (ax_media < 0.2) {
+                alert (" Vai pro banco cara!");
+        }   
+        else {
+                alert (" Jogou ate que bem cara!");
+        }
+
+
+    }
+
+
+
+</script>

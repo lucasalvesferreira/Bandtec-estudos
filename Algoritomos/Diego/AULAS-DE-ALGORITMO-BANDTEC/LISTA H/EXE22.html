@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div_tela1">
+        Digite a quantidade de numeros sorteados<input id="ipt_qtd" type="text"><br>
+        Digite a divisibilidade que você quer encontrar<input id="ipt_div" type="text"><br>
+        <button id="btn_sortear" onclick="Sortear()">Sortear</button>
+    </div>
+    <span id="sp_numero"></span>
+    <span id="sp_total"></span>
+    <button onclick="Voltar()" style="display: none;"></button>
+</body>
+<script>
+    function Sortear(){
+        var qtd = Number(ipt_qtd.value);
+        var divi = Number(ipt_div.value);
+        var num_total = Number(0);
+        var num_sor = Number(0);
+        var num_max = Number(0);
+        var num_min = Number(120);
+        var num_media = Number(0);
+        var cont = Number(0);
+        btn_voltar.style.display = 'block';
+        if(( qtd>=10 && qtd<=50) && (divi>1 && divi <10)){
+            div_tela1.style.display = 'none';
+            while(cont<qtd){
+                num_sor = 1 + Number((Math.random()*100).toFixed(0));
+                if(num_sor%divi == 0){
+                    sp_numero.innerHTML += `${cont +1}° -<span style="color:red"> ${num_sor}</span> <br>`;
+                }else{
+                    sp_numero.innerHTML += `${cont +1}° - ${num_sor} <br>`;
+                }
+
+                if(num_sor>num_max){
+                    num_max = num_sor;
+                }
+                if(num_sor<num_min){
+                    num_min = num_sor
+                }
+                
+                num_total = num_total + num_sor;
+                num_media = num_total/qtd;
+                sp_total.innerHTML = `O maior número sorteado foi: ${num_max}<br>
+
+                                      O menor número sorteado foi: ${num_min}<br>
+
+                                      A média de todos os números sorteados é:  ${num_media.toFixed(2)}<br>`;
+                cont++;
+            }
+            function Voltar(){
+                
+            }
+           
+
+
+
+
+
+
+
+
+        }
+        else if((divi >= 10 || divi <=1) && (qtd<10 || qtd>50)){
+            alert("Digite um numero entre 1 e 10 para ser divido e um numero entre 10 e 50 para ser sorteado");
+        }
+        else if(divi >= 10 || divi <=1){
+            alert("Digite um numero entre 1 e 10 para ser divido");
+        }
+        else{
+            alert("Digite um numero entre 10 e 50 para ser sorteado");
+        }
+    }
+</script>
+</html>

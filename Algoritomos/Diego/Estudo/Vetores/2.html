@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="ipt_destino" type="text" placeholder="Destino de viagem"> <br>
+    <button onclick="add()">Adicionar</button> <br> <br>
+    <button onclick="btn_primeira()">Primeira viagem</button> 
+    <button onclick="btn_terceira()">Terceira viagem</button>
+    <button onclick="btn_ultima()">Última viagem</button>
+    <div id="msg1"></div>
+    
+</body>
+</html>
+<script>
+    var viagens = []
+    var destino;
+    function add(){
+
+        msg1.innerHTML = '';
+        destino = ipt_destino.value;
+        ipt_destino.value = '';
+        
+        viagens.push(destino);
+
+        
+    }
+    function btn_primeira(){
+        msg1.innerHTML = '';
+        if ( viagens.indexOf(destino) == -1) {
+            alert('ainda não viajou')
+
+        } else {
+            msg1.innerHTML = `${viagens[0]}`;
+        }
+        
+        
+    }
+
+    function btn_ultima() {
+        if ( viagens.indexOf(destino) == -1) {
+            alert('ainda não viajou')
+        } else {
+            msg1.innerHTML = `${viagens.length -1}`;
+        } 
+        
+    }
+
+    function btn_terceira(){
+        
+        if ( viagens.indexOf(destino) == -1) {
+            alert('ainda não viajou')
+        } else {
+            msg1.innerHTML = `${viagens[2]}`;
+        } 
+
+    }
+</script>

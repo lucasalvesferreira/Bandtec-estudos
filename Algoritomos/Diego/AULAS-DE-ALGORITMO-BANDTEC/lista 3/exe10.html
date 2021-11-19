@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite a quantidade de pessoas infectadas atualmente.<input id="ipt_infec" type="text">
+    <button onclick="Ontem()"> Quantas pessoas infectadas ontem.</button>
+    <div id="box_ontem"></div>
+    <button onclick="Amanha()">Quantas pessoas infectadas amanhã</button>
+    <div id="box_amanha"></div>
+    <button onclick="Mes()">Quantas pessoas infectadas daqui a 1 mês</button>
+    <div id="box_mes"></div>
+</body>
+<script>
+    var infectados ;
+    function Ontem(){
+        infectados = Number(ipt_infec.value);
+        var ontem = infectados - 35;
+        box_ontem.innerHTML = ` Ontem haviam ${ontem} pessoas infectadas`;
+        
+    }
+    function Amanha(){
+        infectados = Number(ipt_infec.value);
+        var amanha = infectados + 35;
+        box_amanha.innerHTML = ` Amanhã haverão ${amanha} pessoas infectadas`;
+    }
+    function Mes(){
+        infectados = Number(ipt_infec.value);
+        var mes = infectados + (35 * 30);
+        box_mes.innerHTML = ` Daqui a 1 mês haverão ${mes} pessoas infectadas`;
+    }
+</script>
+</html>

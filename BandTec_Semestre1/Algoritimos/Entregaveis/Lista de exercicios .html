@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de exercicio</title>
+</head>
+<body>
+        <h1 style="color: darkblue;"><u>Cadastro</u></h1><br>
+
+        <b>Digite sua Cidade Natal:</b>  <input type="text" placeholder="Digite sua cidade" id="Cidade", ><br>
+        <b>Digite seu Ano de Nascimento:</b>  <input type="text" placeholder= "Digite seu Nascimento" id='Nascimento'><br>
+        <br>
+    <button onclick="Cadastro()" style="color: blue;background-color: chartreuse;">Senta o dedo Aqui</button>
+    
+</body>
+</html>
+
+<Script>
+    function Cadastro() {
+        alert("Sua cidade: " + Cidade.value + "Nascimento: " + Nascimento.value);
+
+            
+};
+
+</Script>
+
+
+
+
+
+
+
+
+<!-- Atividade 2-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de exercicio</title>
+</head>
+<body>
+        <h1 style="color: darkblue;"><u>Cadastro</u></h1><br>
+
+        <b>Digite sua Cidade Natal:</b>  <input type="text" placeholder="Digite sua cidade" id="Cidade", ><br>
+        <b>Digite seu Ano de Nascimento:</b>  <input type="text" placeholder= "Digite seu Nascimento" id='Nascimento'><br>
+        <br>
+    <button onclick="Cadastro()" style="color: blue;background-color: chartreuse;">Senta o dedo Aqui</button>
+    
+    <div id= "mens"></div>
+
+</body>
+</html>
+
+<Script>
+    function Cadastro() {
+        mens.innerHTML += 'Sua cidade: ' +' '+  Cidade.value + "<br>"+ 'Nascimento: '+ Nascimento.value + '<br>  '
+
+            
+};
+
+</Script>
+
+
+
+<!--
+    Atividade 3
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de exercicio</title>
+</head>
+<body>
+        <h1 style="color: darkblue;"><u>Cadastro</u></h1><br>
+
+        <b>Digite sua Cidade Natal:</b>  <input type="text" placeholder="Digite sua cidade" id="Cidade", ><br>
+        <b>Digite seu Ano de Nascimento:</b>  <input type="text" placeholder= "Digite seu Nascimento" id='Nascimento'><br>
+        <br>
+    <button onclick="Cadastro()" style="color: blue;background-color: chartreuse;">Senta o dedo Aqui</button>
+    
+    <div id= "mens"></div>
+
+</body>
+</html>
+
+<Script>
+    function Cadastro() {
+        mens.innerHTML += 'Sua cidade: ' +' '+ '<b>'+ Cidade.value + '</b>' + "<br>"+ 'Nascimento: '+'<U>' + Nascimento.value + '</U>'+ '<br>'
+            
+};
+
+</Script>
+
+<!--
+    Exercicio 4
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="color: darkmagenta;"><u> Media dos Alunos</u></h1><br>
+
+     <b>Primeira Nota</b> <input type="text" placeholder="Digite a Primeira" Id="Primeira">
+     <b>Segunda Nota </b> <input type="text" placeholder="Digite a Segunda"  Id="Segunda"><br>
+     <br>
+     <button onclick="Calcular()" style="color: blue;background-color: chartreuse;">Calcular Media</button>
+     <div id="mens"></div>
+     
+</body>
+</html>
+
+<Script>
+    function Calcular(){
+    var Nota1 = Number(Primeira.value);
+    var Nota2 = Number(Segunda.Value);
+    var Soma = nota1 + Nota2;
+    var Media = Soma /2
+    }
+</Script>

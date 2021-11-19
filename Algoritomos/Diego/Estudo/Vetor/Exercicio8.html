@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio_8_vetor</title>
+</head>
+<body>
+    
+    <h1>Cadastre os alunos:</h1>
+<br>
+Digite o nome dos alulos: <input id="ipt_nome" placeholder="Aluno">
+<button onclick ='cadastrar()'>Cadastrar</button><br>
+<br>
+<div id="msg"></div>
+
+</body>
+</html>
+<script>
+var vetor = [];
+function cadastrar(){
+    vetor.push(ipt_nome.value);
+
+
+    msg.innerHTML='';
+
+    for (var index = vetor.length-1; index > -1; index--) {
+        
+        msg.innerHTML +=`${vetor[index]}<br>`;
+    
+}
+}
+
+
+</script>

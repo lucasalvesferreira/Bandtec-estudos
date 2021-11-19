@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)file:///C:/Users/Aluno/Downloads/Projeto%20de%20P.I.html -->
+<html lang="pt"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termo vinho</title>
+</head>
+<body bgcolor="Black" id="bgcolor" style="background-color: rgb(238, 188, 203);">
+    <div id="imagem" style="display: none;">
+<center>
+            <img onclick="imagem_vinho()" src="./AAAA_files/tumblr_o8id3hNHie1sj1kafo1_500.gif"> <br>
+        <h1 style="color: rgb(119, 42, 190);">TERMO VINHOS</h1>
+    </center></div>
+
+
+
+
+    <div id="vinho2" style="display: block;">
+  <center>
+      <img src="./AAAA_files/vinhos-GIF.gif" style="width: 200px;">
+  </center>
+  <h3 style="color: rgb(41, 22, 22);"><span style="background-color: chocolate;">Missão e valores: </span> <br> Ajudar os produtores de vinho de São Roque a fornecerem um vinho de qualidade e com valor
+ competitivo no mercado internacional, para que possam bater de frente com os vinhos finos, amplamente requisitados.</h3>  <br><br>
+ <h3 style="color: chocolate;"><span style="background-color: yellow;">Quem somos: </span> <br>
+    Somos uma equipe de tecnologia composta por 7 integrantes. <br>
+    Apaixonados por vinho e com visões pretensiosas para este mercado. <br>
+    A empresa Termo vinhos visa por meio da tecnologia ultrapassar
+    as barreiras que envolvem a produção do vinho em regiões mais quentes como São Roque, para que o produtor brasileiro possar ganhar espaço e ser reconhecido 
+    internacionalmente. </h3><br><br>
+ <h1 style="color: blue;"><span style="background-color: cyan;">Produtos e Serviços: </span><br></h1>
+ * Visualização da condição do vinho dentro dos barris, tais como (temperatura e úmidade) por meio de um sensor instalado pela nossa empresa. <br>
+ * Fornecimento de informações importantes na estocagem tais como (melhores condições de temperatura, úmidade e melhor madeira para cada tipo de vinho) <br>
+ * Consultoria e acompanhamento do sistema 24 horas por dia. <br><br>
+  <button onclick="calculadora()"><h2>CALCULADORA FINANCEIRA</h2></button> <br>
+  <h3>Contatos:</h3>
+</div>
+
+
+
+<div id="calculos" style="display: none;">
+    <span style="color: pink;">Só no último semestre (primeiro de 2021) o consumo de vinho foi de 10,8 para 15,2 milhões de litros (41,15%) <br> 
+    Sendo assim, fizemos uma calculadora para ter uma média de quanto você pode ganhar com base nesse valor, que tende a AUMENTAR mais ainda no próximo semestre <br> <br> <br></span>
+
+<input id="litros" placeholder="quant. em litros que irá produzir" style="width: 200px;"><br>
+<input id="tipodevinho" placeholder="Tipo de vinho" style="width: 200px;"> <br>
+<button onclick="calcular()">Calcular</button> <br> <br>
+<div id="resultados_calculadora" style="color: chartreuse;">Com uma produção de <b id="producao"> Litros</b>
+do vinho <span id="vinhostipo"> </span>, terá uma venda de <b id="aumento"> </b> Litros a mais com relação ao semestre passado. <br>
+Que corresponde a R$<b id="reais"></b> por garrafa.
+
+</div> <br> <br>
+
+<span style="color: yellow;">Tipo de vinho: <br>
+*Tinto: Cabernet Sauvignon <br>
+ </span> <br> <br>
+
+ <h1 style="color: pink; background-color: rgb(70, 12, 12);">Veja quanto você gastará com os nossos serviços!</h1> <br>
+ <b style="color: greenyellow;">Cada sensor de temperatura ( um para cada barril) é R$ 50 . <br>
+ Nosso monitor de temperatura é R$ 130. <br>
+ A instalação é R$ 200. <br>
+ Nossa consultoria e acompanhamento são R$ 500 anuais.  <br> <br> 
+ <input id="sensores" placeholder="Número de sensores"> <br>
+ <button onclick="nossos_servicos()">Calcular</button> <br>
+
+ Sendo assim o valor total é R$ <u id="total"> </u> 
+</b>
+
+
+ 
+
+
+
+</div>
+
+
+
+
+
+
+<script>
+function imagem_vinho () {
+    imagem.style.display ="none";
+    vinho2.style.display ="block";
+
+    bgcolor.style.backgroundColor = "rgb(238, 188, 203)";
+}
+function calculadora () {
+    vinho2.style.display = "none";
+    bgcolor.style.backgroundColor = "purple";
+    calculos.style.display = "block";
+}
+
+function calcular () {
+
+ producao.innerHTML =`${litros.value} Litros`;
+ vinhostipo.innerHTML = `${tipodevinho.value}`;
+ aumento.innerHTML = `${(litros.value * 41.15) / 100}`;
+ reais.innerHTML = `${(50 * ((litros.value * 41.15) / 100)) / 750}`;
+}
+
+function nossos_servicos () {
+    total.innerHTML = `${Number(sensores.value * 50) + Number(130 + 200 + 500)}`;
+}
+</script></body></html>

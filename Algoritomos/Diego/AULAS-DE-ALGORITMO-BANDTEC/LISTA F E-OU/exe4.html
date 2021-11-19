@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Selecione o metodo de pagamento
+    <select id="sel_forma">
+        <option value="din">Dinheiro</option>
+        <option value="deb">Cartão de Debito</option>
+        <option value="cred">Cartão de Credito</option>
+        <option value="bol">Boleto</option>
+    </select>
+    <button onclick="Compra()">Analisar compra</button>
+    <div id="div_mostrar">
+    </div>
+</body>
+<script>
+    function Compra(){
+        var forma = sel_forma.value;
+        if(forma == "din" || forma == "deb"){
+            div_mostrar.innerHTML = `Você terá que pagar a vista`;
+        }
+        else{
+            div_mostrar.innerHTML = `Pagamento poderá ser parcelado`;
+        }
+    }
+</script>
+</html>

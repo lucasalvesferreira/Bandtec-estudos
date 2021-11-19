@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="span_entregas">Entregas para Zona Sul<input id="ipt_ZS" type="text" ><br>
+        Entregas para Zona Norte<input id="ipt_ZN" type="text" ><br>
+        Entregas para Zona Leste<input id="ipt_ZL" type="text" ><br>
+        Entregas para Zona Oeste<input id="ipt_ZO" type="text" ><br>
+        <button id="bt_agenda" onclick="Agenda()">Carregar agenda</button><br>
+    </span>
+    <div id="Zonas"></div>
+</body>
+<script>
+    var entregas_ZL = Number(0);
+    var entregas_ZS = Number(0);
+    var entregas_ZN = Number(0);
+    var entregas_ZO = Number(0);
+    var entregas_totais = Number(0);
+    function Agenda(){
+        entregas_ZL = Number(ipt_ZL.value);
+        entregas_ZS = Number(ipt_ZS.value);
+        entregas_ZN = Number(ipt_ZN.value);
+        entregas_ZO = Number(ipt_ZO.value);
+        entregas_totais = Number(entregas_ZL + entregas_ZS + entregas_ZN + entregas_ZO);
+        span_entregas.style.display = 'none';
+        Zonas.innerHTML = ` 
+        Entregas ZL: ${entregas_ZL}<br>
+        Entregas ZS: ${entregas_ZS}<br>
+        Entregas ZN: ${entregas_ZN}<br>
+        Entregas ZO: ${entregas_ZO}<br>
+        Entregas restantes: ${entregas_totais}<br>
+        <button onclick="eZL()">Entregar ZL</button>
+        <button onclick="eZS()">Entregar ZS</button>
+        <button onclick="eZN()">Entregar ZN</button>
+        <button onclick="eZO()">Entregar ZO</button>`;
+        }
+        function eZL(){
+            entregas_ZL --;
+            entregas_totais --;
+            Zonas.innerHTML = ` 
+                Entregas ZL: ${entregas_ZL}<br>
+                Entregas ZS: ${entregas_ZS}<br>
+                Entregas ZN: ${entregas_ZN}<br>
+                Entregas ZO: ${entregas_ZO}<br>
+                Entregas restantes: ${entregas_totais}<br>
+                <button onclick="eZL()">Entregar ZL</button>
+                <button onclick="eZS()">Entregar ZS</button>
+                <button onclick="eZN()">Entregar ZN</button>
+                <button onclick="eZO()">Entregar ZO</button>`;
+        }
+        function eZS(){
+          çç
+            Zonas.innerHTML = ` 
+                Entregas ZL: ${entregas_ZL}<br>
+                Entregas ZS: ${entregas_ZS}<br>
+                Entregas ZN: ${entregas_ZN}<br>
+                Entregas ZO: ${entregas_ZO}<br>
+                Entregas restantes: ${entregas_totais}<br>
+                <button onclick="eZL()">Entregar ZL</button>
+                <button onclick="eZS()">Entregar ZS</button>
+                <button onclick="eZN()">Entregar ZN</button>
+                <button onclick="eZO()">Entregar ZO</button>`;
+        }
+        function eZN(){
+            entregas_ZN --;
+            entregas_totais --;
+            Zonas.innerHTML = ` 
+                Entregas ZL: ${entregas_ZL}<br>
+                Entregas ZS: ${entregas_ZS}<br>
+                Entregas ZN: ${entregas_ZN}<br>
+                Entregas ZO: ${entregas_ZO}<br>
+                Entregas restantes: ${entregas_totais}<br>
+                <button onclick="eZL()">Entregar ZL</button>
+                <button onclick="eZS()">Entregar ZS</button>
+                <button onclick="eZN()">Entregar ZN</button>
+                <button onclick="eZO()">Entregar ZO</button>`;
+        }
+        function eZO(){
+            entregas_ZO --;
+            entregas_totais --;
+            Zonas.innerHTML = ` 
+                Entregas ZL: ${entregas_ZL}<br>
+                Entregas ZS: ${entregas_ZS}<br>
+                Entregas ZN: ${entregas_ZN}<br>
+                Entregas ZO: ${entregas_ZO}<br>
+                Entregas restantes: ${entregas_totais}<br>
+                <button onclick="eZL()">Entregar ZL</button>
+                <button onclick="eZS()">Entregar ZS</button>
+                <button onclick="eZN()">Entregar ZN</button>
+                <button onclick="eZO()">Entregar ZO</button>`;
+        }
+</script>
+</html>

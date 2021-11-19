@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio_9</title>
+</head>
+<body>
+    <h1>Meus projetos</h1>
+<br>
+<br>
+
+Digite o nome dos projetos que ja criou: <input id="ipt_proj" placeholder="Projeto">
+<button onclick="Cadastrar()">Cadastrar</button>
+<button onclick="Mostrar()">Mostar</button>
+
+<br>
+<br>
+
+Você já fez  <span id="span_qtd"></span> projetos. <br>
+Por isso você é um profissional <span id="span_nivel"></span> <br>
+
+<div id="msg">
+    <br> Sua lista de projetos é:
+
+</div>
+</body>
+</html>
+
+<script>
+    var vetor=[];
+var QtdProje= 0;
+
+function Cadastrar(){
+    vetor.push(ipt_proj.value);
+    
+    QtdProje++;
+    span_qtd.value == QtdProje;
+    span_qtd.innerHTML = `${QtdProje}`
+    
+if(QtdProje == 0 || QtdProje < 5 ){
+span_nivel.innerHTML=`Junior `;}
+
+else if(QtdProje > 4 || QtdProje < 13 ){
+    span_nivel.innerHTML=` Pleno desde o projeto ${vetor[4]}`;}
+    
+    else if(QtdProje >= 13 ){
+        span_nivel.innerHTML=` Senior desde o projeto ${vetor[12]}`;}
+    }
+    function Mostrar(){
+        
+        for (var index = vetor.length-1; index > 0; index--) {
+            
+            msg.innerHTML +=`${vetor[index]} <br>`;
+        }
+      
+            
+
+
+}
+</script>

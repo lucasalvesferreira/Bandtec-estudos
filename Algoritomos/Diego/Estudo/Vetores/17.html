@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: block;" id="pt1">
+        <h1 style="color: rgb(211, 36, 36);">Análise de performance de Alunos - Registro</h1> 
+        <span style="color: red;">Entre com o Nome do aluno</span> <input type="text" id="id_ipt_nome"> <br> <br>
+        <span style="color:red">Entre com a Nota do aluno</span><input type="text" id="id_ipt_nota">  <br> <br>
+        <span style="margin-right: 40px;" ><button onclick="registrar()">Registrar</button></span>
+        <button onclick="analisar()">Analisar</button> <br> <br>
+
+        <div id="msg"></div>
+        <div id="msg2"></div>
+    </div>
+    <div id="pt2" style="display: none" > 
+        
+        <h1 style="color: rgb(211, 36, 36);">Análise de performance de Alunos - Pesquisa</h1> 
+        <span style="color: red;">Entre com intervalo de notas</span> <input type="text" id="id_ipt_de" placeholder="de"> <input type="text" id="id_ipt_ate" placeholder="até"> <br> <br>
+        <span style="margin-right: 40px;" ><button onclick="pesquisar()">Pesquisar</button></span>
+        <div id="msg3"></div> <br><br>
+        <div id="msg4"></div>
+    </div>
+
+</body>
+</html>
+<script>
+    nota = []
+    nome = []
+    function registrar(){
+        
+        msg.innerHTML = ''
+        var ipt_nome = id_ipt_nome.value;
+        var ipt_nota = Number(id_ipt_nota.value);
+        nota.push(ipt_nota);
+        nome.push(ipt_nome);
+ 
+        for (var i = nome.length -1; i >= 0; i --){
+           
+            if (ipt_nome == '') {
+                alert('O nome deve ser preenchido')
+                nota.pop(ipt_nota [-1]);
+                nome.pop(ipt_nome[-1]);
+                break;
+            } else if (ipt_nota == null) {
+                alert('A nota deve ser preenchida')
+                nota.pop(ipt_nota [-1]);
+                nome.pop(ipt_nome[-1]);
+                break;
+            } 
+        
+        if (!( ipt_nota >= 0 && ipt_nota <= 10)) {
+                alert('O número deve ser entre 0 e 10')
+                nota.pop(ipt_nota [-1]);
+                nome.pop(ipt_nome[-1]);
+                break;
+                
+            }
+            
+            
+            msg.innerHTML += `${nome[i]} tirou ${nota[i]} <br>`;
+            id_ipt_nome.value = ''
+            id_ipt_nota.value = ''
+
+
+        }
+    }
+    function analisar() {
+        pt1.style.display = 'none'
+        pt2.style.display = 'block'
+        msg.innerHTML = ''
+        msg2.innerHTML = ''
+        id_ipt_nome.value = ''
+        id_ipt_nota.value = ''
+    }
+
+    function pesquisar() {
+        contador = 0;
+        msg3.innerHTML = ''
+        msg4.innerHTML = ''
+        var ipt_de = Number(id_ipt_de.value)
+        var ipt_ate = Number(id_ipt_ate.value)
+        var maior_nota = 0;
+        var menor_nota = 9999;
+        var total = 0;
+
+
+        for (var i = 0; i <= nome.length ;i++){
+            
+        if (!( ipt_de >= 0 && ipt_de <= 10 && ipt_ate >= 0 && ipt_ate <= 10 )) {
+                alert('O número deve ser entre 0 e 10')
+                break;
+            } 
+        if (!(ipt_de <= ipt_ate)) {
+            alert('Erro! O campo "de" deve ser menor ou igual o "até"!')
+            break;
+        }
+
+            if (nota[i] >= ipt_de && nota[i] <= ipt_ate) {
+                msg3.innerHTML += `O aluno ${nome[i]} ficou com a nota ${nota[i]} <br>`
+                contador ++
+            }
+        }
+        for (var i = 0; i < nota.length; i++) {
+            if (maior_nota < nota[i]){
+                maior_nota = nota[i]
+            }
+        }
+        
+            for (var i = 0; i < nota.length; i++) {
+                if (menor_nota > nota[i]){
+                    menor_nota = nota[i]
+                }
+            }
+
+            for (var i = 0; i < nota.length; i++) {
+                total += nota[i]
+            }
+            msg4.innerHTML = `Total de alunos registrados: ${nome.length}<br> Total de alunos listado: ${contador} <br> Maior Nota = ${maior_nota} <br> Menor Nota = ${menor_nota} <br> Média da Nota = ${total /nota.length}`
+        
+    }
+</script>

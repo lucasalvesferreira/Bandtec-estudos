@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite a nota do ENEM<input id="ipt_enem" type="text">
+    Digite a nota do Vestibular interno<input id="ipt_vest" type="text">
+    <button onclick="Calcular()">Avaliação</button>
+</body>
+<script>
+    function Calcular(){
+        var enem = ipt_enem.value;
+        var vest = ipt_vest.value;
+        if(enem >= 800 || vest >= 700){
+            alert("Parabéns! Aprovado");
+        }
+        else{
+            alert("Tente semestre que vem!");
+        }
+    }
+</script>
+</html>

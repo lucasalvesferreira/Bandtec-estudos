@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Marvels</h1>
+            <ul class="nav_bar">
+                <li ><a href="index.html">Inicio</a></li>
+                
+                <!--<li><a href="pag2.html">Chame um heroi</a></li> -->
+                
+                <li>|</li>
+
+                <li class="ativo"><a href="login.html">Login</a></li>
+
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="div_banner">
+        <div class = "formLogin">
+            <h2>Seja Bem vindo</h2>
+            <div>
+                <span>Email</span><br>
+                <input type="text" id="ipt_email">
+            </div>
+            <div>
+                <span>Senha</span><br>
+                <input type="password" id="ipt_senha">
+            </div>
+            <button onclick="Entrar()">Entrar</button>
+        </div>
+    </div>
+    <div class="footer"><p>Feito com amor por um aluno Bandtec</p></div>
+    
+</body>
+<script>
+    function Entrar(){
+        var email = ipt_email.value;
+        var senha = ipt_senha.value;
+
+        if((email == 'guga@gmail.com') && (senha == 'guga123')){
+            alert("Login bem sucedido");
+        }
+        else{
+            if(email != 'guga@gmail.com' && senha != 'guga123'){
+                alert("Email e senha incorreta");
+            }
+            else if(senha != 'guga123'){
+                alert("Senha incorreta");
+            }
+            else{
+                alert("Email incorreto");
+            }
+        }
+    }
+</script>
+</html>

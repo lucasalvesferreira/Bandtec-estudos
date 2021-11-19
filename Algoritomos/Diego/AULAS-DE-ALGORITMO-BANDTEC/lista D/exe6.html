@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="sel_estacao" onchange="estacao()">
+        <option value="">--Selecione uma estação</option>
+        <option value="https://dicasparaviagens.com.br/wp-content/uploads/2017/03/Outono-Principal.jpg">Outuno</option>
+        <option value="https://s.calendarr.com/upload/datas/ve/ra/verao_c.jpg">Verão</option>
+        <option value="https://abcreporter.com.br/wp-content/uploads/2020/09/Primavera.jpg">Primavera</option>
+        <option value="https://www.oficinadeinverno.com.br/blog/wp-content/uploads/2016/10/mala-para-a-Suécia.jpg">Inverno</option>
+    </select>    
+    <div id="mostrar">
+    </div>
+</body>
+<script>
+    function estacao(){
+        var estacao = sel_estacao.value;
+        mostrar.innerHTML = `<img src=${estacao}>`;
+    }
+</script>
+</html>

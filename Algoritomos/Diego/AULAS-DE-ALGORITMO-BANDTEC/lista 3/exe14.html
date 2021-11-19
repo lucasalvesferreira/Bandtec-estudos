@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <center>
+        <button onclick="Iniciar()">Iniciar Jogo</button>
+        <div id="mostrar" style="display:none"></div>
+        <div id="golpes" style="display:none"></div>
+    </center>
+</body>
+<script>
+    var barra_lut1 = Number(100);
+    var barra_lut2 = Number(100);
+    var golpes_lut1 = Number(0);
+    var golpes_lut2 = Number(0);
+        mostrar.innerHTML =  `<div id="direita" style="float: left; height:580px; width:50%; background-color: #A9A9A9;" >
+                                Jogador Numero 1:<br>
+                                    <img src="Paul_Phoenix_(T7).png" style= "height: 260px; margin-top: 94px;" onclick="Vida_lut1()">
+                                <br>Barra de Vida:
+                                    <div id="barra_de_vida1" style="height: 20px; width: ${barra_lut1}%; background-color: green;" ></div>
+                              </div> 
+                              <div id="direita" style="float: left; height:580px; width:50%; background-color: #FFFF00;" >  
+                                Jogador Numero 2:<br>
+                                    <img src="eddy-gordo.png" style= "height: 260px; margin-top:94px" onclick="Vida_lut2()">
+                                <br>Barra de Vida:<br>
+                                    <div id="barra_de_vida2" style="height: 20px; width: ${barra_lut2}%; background-color: green;" ></div>
+                              </div>`;
+        golpes.innerHTML = `<br>Golpes sofridos pelo lutador 1: ${golpes_lut1}, logo a vida está em ${barra_lut1}%<br> 
+                                Golpes sofridos pelo lutador 2: ${golpes_lut2}, logo a vida está em ${barra_lut2}%<br>`;
+
+    function Iniciar(){
+        mostrar.style.display = 'block';
+        
+    }
+    function Vida_lut1(){
+        golpes.style.display = 'block';
+        barra_lut1 -=5;
+        golpes_lut1 ++;
+        mostrar.innerHTML =  `<div id="direita" style="float: left; height:580px; width:50%; background-color: #A9A9A9;" >
+                                Jogador Numero 1:<br>
+                                    <img src="Paul_Phoenix_(T7).png" style= "height: 260px; margin-top: 94px;" onclick="Vida_lut1()">
+                                <br>Barra de Vida:
+                                    <div id="barra_de_vida1" style="height: 20px; width: ${barra_lut1}%; background-color: green;" ></div>
+                              </div> 
+                              <div id="direita" style="float: left; height:580px; width:50%; background-color: #FFFF00;" >  
+                                Jogador Numero 2:<br>
+                                    <img src="eddy-gordo.png" style= "height: 260px; margin-top:94px" onclick="Vida_lut2()">
+                                <br>Barra de Vida:<br>
+                                    <div id="barra_de_vida2" style="height: 20px; width: ${barra_lut2}%; background-color: green;" ></div>
+                              </div>`;
+        golpes.innerHTML = `<br>Golpes sofridos pelo lutador 1: ${golpes_lut1}, logo a vida está em ${barra_lut1}%<br> 
+                                Golpes sofridos pelo lutador 2: ${golpes_lut2}, logo a vida está em ${barra_lut2}%<br>`;
+        }
+    function Vida_lut2(){
+        golpes.style.display = 'block';
+        barra_lut2 -= 5;
+        golpes_lut2 ++;
+        mostrar.innerHTML =  `<div id="direita" style="float: left; height:580px; width:50%; background-color: #A9A9A9;" >
+                                Jogador Numero 1:<br>
+                                    <img src="Paul_Phoenix_(T7).png" style= "height: 260px; margin-top: 94px;" onclick="Vida_lut1()">
+                                <br>Barra de Vida:
+                                    <div id="barra_de_vida1" style="height: 20px; width: ${barra_lut1}%; background-color: green;" ></div>
+                              </div> 
+                              <div id="direita" style="float: left; height:580px; width:50%; background-color: #FFFF00;" >  
+                                Jogador Numero 2:<br>
+                                    <img src="eddy-gordo.png" style= "height: 260px; margin-top:94px" onclick="Vida_lut2()">
+                                <br>Barra de Vida:<br>
+                                    <div id="barra_de_vida2" style="height: 20px; width: ${barra_lut2}%; background-color: green;" ></div>
+                              </div>`;
+        golpes.innerHTML = `<br>Golpes sofridos pelo lutador 1: ${golpes_lut1}, logo a vida está em ${barra_lut1}%<br> 
+                                Golpes sofridos pelo lutador 2: ${golpes_lut2}, logo a vida está em ${barra_lut2}%<br>`;
+        }
+  
+</script>
+</html>

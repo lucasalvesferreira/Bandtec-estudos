@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite a ultima SITCOM que você assistiu<input id="ipt_sitcom" type="text">
+    Digite o total de eps que você já assistiu<input id="ipt_eps" type="text">
+    <button onclick="Verificar()">Verificar Nivel</button>
+    <div id="div_mostrar"></div>
+    <div id="div_mostra"></div>
+</body>
+<script>
+    function Verificar(){
+        var serie = ipt_sitcom.value;
+        var eps = Number(ipt_eps.value);
+        var tempo = (eps * 22)/60;
+        div_mostrar.innerHTML = `Vejo que você gosta da serie ${serie}`;
+        if(tempo > 30){
+            div_mostra.innerHTML = `Uau, você realmente gosta dessa serie!`;
+        }
+    }
+</script>
+</html>

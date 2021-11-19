@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="ipt_tabuada" type="text"> Qual a tabuada deseja ver? <br>
+    <input type="text" id="ipt_num">Até que número a tabuada deve ser construída <br> <br>
+    <button onclick="tabuada()">Ver Tabuada</button> <br>
+    <span id="msg"></span>
+</body>
+</html>
+<script>
+    function tabuada() {
+        msg.innerHTML = '';
+        var qual_tabuada = Number(ipt_tabuada.value)
+        var numero_final = Number(ipt_num.value)
+        var contador = 1;
+
+             
+                while (contador <= numero_final){
+                
+                if ((qual_tabuada * contador) % 2 == 0) {
+                    msg.innerHTML += `<span style="color: blue;" >${qual_tabuada} X ${contador} = ${qual_tabuada * contador}</span> <br>`;
+                     
+                    contador ++;
+                } else if ((qual_tabuada * contador) % 2 == 1) {
+                    msg.innerHTML += `<span style="color: red;" >${qual_tabuada} X ${contador} = ${qual_tabuada * contador}</span> <br>`;
+                     
+                     contador ++; 
+                }
+            } 
+            
+             
+             
+             
+        
+    }
+    
+</script>
+
+<!-- não consegui pq vai tudo em azul, já coloquei o if dentro e fora do while -->

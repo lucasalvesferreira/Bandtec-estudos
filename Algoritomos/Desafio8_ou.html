@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Knab</title>
+</head>
+<body>
+
+<div id='div1' style="display: block;">
+
+        <H1>Seja Bem vindo ao Banco KNAB!!!</H1>
+        
+<br>
+        
+        <h2>Simulação de Emprestimos e Investimentos</h2>
+
+
+        Entre com dados da sua conta:
+<br>
+
+        <input  id='ax_conta' placeholder="Conta">
+        <input  id='ax_digito' placeholder="Digito">
+        <input  id='ax_senha' placeholder="Senha">
+<br>
+<br>
+<br>
+        <button onclick="simular()">Simular</button>
+
+</div>    
+
+
+
+
+<div id="div2" style="display: none;">
+
+        <H1> O Banco KNAB é sua melhor opção !!! </H1> 
+<br>
+<br>
+        <h2>Emprestimos e Investimentos com as melhores taxas do mercado</h2>
+<br>
+    <h3> Entre com os dados da sua simulação</h3>
+<br>
+<br>
+        O valor da Operação: <input id="val" placeholder="valor">
+<br>
+<br>
+    <select id="operacao">
+        <option value="">Selecione a Operação...</option>
+        <option value="ax_empre">Empréstimo </option>
+        <option value="ax_inve">Investimento</option>
+    </select>
+
+    <select id="prazo">
+        <option value="">Selecione o Prazo...</option>
+        <option value="ax_curto">Curto </option>
+        <option value="ax_medio">Medio</option>
+        <option value="ax_longo">Longo</option>
+    </select>
+
+<br>
+<br>
+
+    <button onclick="resultado()">Mostrar o Resultado</button>
+
+
+</div>
+
+<div id="div3" style="display: none;">
+
+
+</div>
+    
+</body>
+</html>
+
+
+<script>
+
+function  simular(){
+
+    var sobra = ax_conta.value % 11; 
+
+    var manaus = ax_digito.value <= 3;
+    var recife = ax_digito.value >= 4 && ax_digito.value < 7;
+    var fortaleza = ax_digito.value >= 8;
+    
+    if(ax_conta.value != 0 && ax_digito.value == 'sobra' && ax_senha == 'manaus'){
+        alert(`Dados corretos!`);
+        div1.style.display = 'none';
+        div2.style.display = 'block';
+
+    } else {
+        alert('Dados incorretos!!');
+    }
+
+    (Conta != 0 && Digito == sobra && Senha == 'recife' ){
+    alert('Dados corretos!');
+    //     div1.style.display = 'none';
+    //     div2.style.display = 'block';
+    // } else {
+    //     alert('Dados incorretos!!');
+    // }
+    
+    // if(Conta != 0 && Digito == sobra && Senha == 'fortaleza' ){
+    //     alert('Dados corretos!')
+    //     div1.style.display = 'none';
+    //     div2.style.display = 'block';
+    // } else {
+    //     alert('Dados incorretos!!');
+    // }
+}
+
+function resultado(){
+
+
+    div2.style.display = 'none'
+    div3.style.display = 'block'
+    
+    if ((operacao.value == 'ax_empre' || operacao.value == 'ax_inve' )  && (prazo.value == 'ax_curto' || prazo.value == 'ax_medio')){
+        alert('Esta operação está condicionada ao seu perfil !!');
+    }
+    
+}
+
+</script>

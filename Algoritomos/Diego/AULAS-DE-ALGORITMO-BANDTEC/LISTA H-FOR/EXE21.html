@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um numero da sorte<input id="ipt_num" type="text">
+    <button onclick="Sorte()">Ver minha Sorte</button>
+</body>
+<script>
+    function Sorte(){
+        var numero_2 = Number(0);
+        var numero = Number(0);
+        var sorte = ipt_num.value;
+
+
+        for(cont=1;cont<=100;cont++){
+            numero_2 = Math.random();
+            numero = (numero_2* 100).toFixed(0) ;
+            if(numero == sorte){
+                alert("Foram necessários "+ cont +" sorteios");
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite a primeira nota <input id="ipt_nota1" type="text">
+    Digite a segunda nota <input id="ipt_nota2" type="text">
+    Digite a terceira nota <input id="ipt_nota3" type="text">
+    <button onclick="Calcular()">Analisar desempenho</button>
+    <div id="exibir"></div>
+</body>
+<script>
+    function Calcular(){
+        var nota1 = Number(ipt_nota1.value);
+        var nota2 = Number(ipt_nota2.value);
+        var nota3 = Number(ipt_nota3.value);
+        var media = (nota1 + nota2 + nota3)/3;
+
+        exibir.innerHTML += `Sua media foi de ${media}<br>`;
+        if(media >9.4){
+            exibir.innerHTML += `Parabens, você é fora de serie!<br>`;
+        } 
+    }
+</script>
+</html>

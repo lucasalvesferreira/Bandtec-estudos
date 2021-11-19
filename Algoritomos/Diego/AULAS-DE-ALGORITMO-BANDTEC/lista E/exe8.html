@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite a quantidade de kWh que foi consumida no mês<input id="ipt_kWh" type="text">
+    <button onclick="Conta()">Calcular conta de luz</button>
+</body>
+<script>
+    function Conta(){
+        var kWh_mes = ipt_kWh.value;
+        var total = kWh_mes * 0.85;
+        var total_desconto = total - (total * 0.10);
+        if(kWh_mes <100){
+            alert("O valor da conta será " + total_desconto);
+        }
+        else {
+            alert("O valor da conta será " + total_desconto);
+    }
+    }
+</script>
+</html>

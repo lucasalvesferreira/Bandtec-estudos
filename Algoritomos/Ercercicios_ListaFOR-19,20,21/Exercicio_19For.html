@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio_19</title>
+</head>
+<body>
+    
+    <h2>Linha da vida</h2>
+<br>
+Qual sua idade: <input id="ipt_idade" onchange="dade()">
+<br>
+<br>
+
+<div id="msg">
+</div>
+</body>
+</html>
+
+<Script>
+function dade(){
+    msg.innerHTML =''
+
+for (var index = 0; index <= ipt_idade.value; index++) {
+    
+    if(index >= 0 && index <= 4 ){
+    msg.innerHTML += `${index} - (Primeira Infância)<br> `;}
+
+    else if (index >= 5 && index <= 6 ){
+    msg.innerHTML += `${index} - (Pré-escolar)<br> `;}
+
+    else if (index >= 7 && index <= 10 ){
+    msg.innerHTML += `${index} - (Segunda Infância) <br>`;}
+
+    else if (index >= 11 && index <= 18 ){
+    msg.innerHTML += `${index} - (Adolescência) <br>`;}
+
+    else if (index >= 19 && index <= 50 ){
+    msg.innerHTML += `${index} - (Adulto) <br>`;}
+
+    else if (index >= 51 && index <= 100 ){
+    msg.innerHTML += `${index} - (Melhor idade) <br>`;}
+
+    else if (index > 100 ){
+    msg.innerHTML += `${index} - (Matusalém) <br>`;
+
+}
+    
+ 
+}
+
+
+
+}
+
+</Script>

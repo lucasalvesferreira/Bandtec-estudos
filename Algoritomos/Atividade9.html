@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Animais</title>
+</head>
+<body>
+    
+    <h1>Lista de Animais:</h1>
+
+            <select id="Lista" onchange="list()">
+                <option value=" ">- Escolha uma espécie... -</option>
+                <option value="oviparo">Ovíparos </option>
+                <option value="mamifero">Mamiferos</option>
+            </select>
+<br>
+            <Select id='idOvi' onchange= "oviparos()" style="display: none">
+                <option value="" > Oviparos </option>
+                <option value="https://img.estadao.com.br/thumbs/640/resources/jpg/6/6/1604061793866.jpg">Galinha</option>
+                <option value="https://cdn-bifarma3.stoom.com.br/fotos/425694.jpg">Peixe</option>
+                <option value="https://i.pinimg.com/originals/94/e0/f6/94e0f64f2a58db30cc4d6f2c8e9566fe.jpg">Tartaruga</option>
+            </Select>
+           
+            
+            <Select id='idMami' onchange= "mamiferos()" style="display: none">
+                <option value="" > Mamiferos </option>
+                <option value="https://image.freepik.com/vetores-gratis/desenho-de-elefante-adoravel-realista_74769-36.jpg">Elefante</option>
+                <option value="https://super.abril.com.br/wp-content/uploads/2019/01/gaguinho.jpg?quality=70&strip=info"> Porco</option>
+                <option value="https://i.pinimg.com/originals/94/1f/57/941f577b02ff4a98c7208bb81362d78c.jpg">Coelho</option>
+            </Select>
+
+
+            <img id='idImg'src="" alt="" style="width: 300px;">
+<br>
+
+                <div id='seila' style="display: none;"> 
+                    <input id="valor" placeholder="Valor de compra do animal">
+<br>
+                        <button onclick="calcular()" style="color: blue;background-color: brown;">Calcular  imposto</button>
+
+                </div><div id="valor_animal"></div>
+
+
+</body>
+</html>
+<Script>
+function list() {
+
+    if (Lista.value == `oviparo`) {
+        idOvi.style.display = "block"
+        idMami.style.display = "none"
+    }
+    
+    if (Lista.value == `mamifero` ) {
+        idMami.style.display = "block"
+        idOvi.style.display = "none"
+    }
+}
+    function oviparos() {
+        idImg.src = idOvi.value;
+        idOvi.style.display = "block";
+        seila.style.display = `block`;
+    }    
+    
+    
+    function mamiferos() {
+        idImg.src = idMami.value; 
+        idMami.style.display = "block";
+        seila.style.display = `block`;
+    }
+
+    function calcular() {
+        if(Lista.value == `oviparo`){
+        valor_animal.innerHTML= `O imposto será de R$ ${(5/100 * valor.value).toFixed(2)}`}
+
+        else {
+        valor_animal.innerHTML= `O imposto será de R$ ${(10/100 * valor.value).toFixed(2)}`}
+
+
+    }
+
+
+</Script>

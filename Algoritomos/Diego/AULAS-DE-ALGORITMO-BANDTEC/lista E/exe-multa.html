@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    quantos pontos você tem no CNH<input id="ipt_pontos" type="text">
+    <button onclick="Multas()">Calcule quanto você deve</button>
+</body>
+<script>
+    function Multas(){
+        var pontos = ipt_pontos.value;
+        var multa = 0;
+        var valor = 0;
+        if (pontos<20){
+            multa = 78;
+            valor = pontos * multa;
+            alert("Você tem " + pontos +" na carteira, o valor da sua multa será R$" + valor.toFixed(2) + " pagando por multa " + multa.toFixed(2) );
+
+        }
+        else{
+            multa = 87;
+            valor = pontos * multa;
+            alert("Você tem " + pontos +" na carteira, o valor da sua multa será R$" + valor.toFixed(2) + " pagando por multa " + multa.toFixed(2));
+        }
+
+    }
+</Script>
+</html>

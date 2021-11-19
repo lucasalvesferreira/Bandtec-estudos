@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="sel_produtos">
+        <option value="4.39">Leite</option>
+        <option value="3.59">Farinha</option>
+        <option value="13.90">Café em pó</option>
+        <option value="3.19">Chocolate em pó</option>
+    </select>
+    <button onclick="Ver()">Ver preço</button>
+    <div id="valor"></div>
+</body>
+<script>
+    function Ver(){
+        var produto = Number(sel_produtos.value);
+        valor.innerHTML = `Isso custa R$ ${produto.toFixed(2)}`;
+    }
+
+</script>
+</html>

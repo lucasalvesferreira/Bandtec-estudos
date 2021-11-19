@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="Pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triatlo-BandTech</title>
+</head>
+<body>
+    
+    <h1> Triatlo-BandTech</h1>
+<br>
+<br>
+
+    Informe seu nome : <input id='ipt_nome' placeholder="Nome"><br>
+    Informe sua idade : <input id='ipt_idade'placeholder="Idade"><br>
+        Informe sua Modalidade: 
+        <Select id="Modalidade">
+            <Option value="1" > Correr </Option>
+            <Option value="2" > Nadar </Option>
+            <Option value="3" > Pedalar </Option>
+
+        </Select>
+<br>
+    <button onclick="Praticar()" >Praticar Esporte</button><br>
+<br>
+
+        <div id="Placar" style="display: none;"  >
+        
+            <h3> <u>Atleta:</u> <span id="span_nome" style="color: black;">  </span>       - <u>Idade:</u> <span id="span_idade" style="color: black;">  </span> anos</h3> 
+<br>
+            Km Correndo: <span id="span_correndo"></span><br>
+            Km Nadando: <span id="span_nadando"></span><br>
+            Km Pedalando: <span id="span_pedalando"></span><br>
+<br>         
+            Km Total: <span id="span_total"></span><br>
+        
+        </div>
+
+</body>
+</html>
+
+<Script>
+    function Praticar() {
+
+    var Nome = ipt_nome.value;
+    var Idade = ipt_idade.value;
+        
+    var sorteio1 = Math.random() ;
+    var sorteio2 = Math.random() ;
+    var sorteio3 = Math.random() ;
+
+    var sort1 = (sorteio1 * (10-0)+0).toFixed(1);
+    var sort2 = (sorteio2 * (10-0)+0).toFixed(1);
+    var sort3 = (sorteio3 * (10-0)+0).toFixed(1);
+
+    var tota = Number(span_correndo.value) + Number(span_nadando.value) + Number(span_pedalando.value) ;
+    
+        if(Nome.length < 3){
+            alert('Quantidade de letras menor que 3, Verifique e tente novamente!! ')}
+        else if((Idade < 18 || Idade > 80)){
+            alert('Idade invalida para participar!!')
+        }
+        
+             if (Modalidade.value == 1 ){
+                span_correndo.innerHTML= `${sort1} `
+                span_nome.innerHTML= `${Nome}`;
+                span_idade.innerHTML = `${Idade}`;
+                Placar.style.display = 'block';
+
+            }
+
+            else if (Modalidade.value == 2 ){
+                span_nadando.innerHTML= `${sort2}`
+                Placar.style.display = 'block';
+                span_nome.innerHTML= `${Nome}`;
+                span_idade.innerHTML = `${Idade}`;
+            }
+
+            else if (Modalidade.value == 3 ){
+                span_pedalando.innerHTML= `${sort3}`
+                Placar.style.display = 'block';
+                span_nome.innerHTML= `${Nome}`;
+                span_idade.innerHTML = `${Idade}`;
+                span_total.innerHTML= `${tota}`
+            }
+
+
+  
+         
+
+    }
+
+</Script>

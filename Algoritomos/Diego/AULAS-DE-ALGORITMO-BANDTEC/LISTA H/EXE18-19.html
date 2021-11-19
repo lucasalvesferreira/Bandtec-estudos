@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>BORA VIAJAR?</h2>
+    Quantos ônibus você utiliza para ir para a faculdade?<input id="ipt_onibus" type="text">
+    Quantos trens você utiliza para ir para a faculdade<input id="ipt_trem" type="text">
+    Quantos metrôs você utiliza para ir para a faculdade<input id="ipt_metro" type="text">
+    <button onclick="Trajeto()">#Partiu Trajeto</button>
+    <div id="div_bus"></div>
+    <div id="div_trem"></div>
+    <div id="div_metro"></div>
+
+</body>
+<script>
+    function Trajeto(){
+        var qtd_oni = ipt_onibus.value;
+        var qtd_trem = ipt_trem.value;
+        var qtd_met = ipt_metro.value;
+        var cont_o = 1;
+        var cont_t = 1;
+        var cont_m = 1;
+        while(cont_o <= qtd_oni){
+           
+            if(cont_o>=2){
+                div_bus.innerHTML += `<b style="color:red">Pegando o ${cont_o}° buzão Começando a cansar</b> <br>`;
+            }else{
+                div_bus.innerHTML += `<b style="color:red">Pegando o ${cont_o}° buzão</b><br>`;
+            }
+            cont_o++;
+        }
+        while(cont_t <= qtd_trem){
+            if(cont_t>=2){
+                div_trem.innerHTML += `<b style="color:green">Pegando o ${cont_o}° trem Começando a cansar</b> <br>`;
+            }else{
+                div_trem.innerHTML += `<b style="color:green">Pegando o ${cont_t}° trem</b><br>`;
+            }
+            cont_t++;
+        }
+        while(cont_m <= qtd_met){
+            if(cont_m>=2){
+                div_metro.innerHTML += `<b style="color:blue">Pegando o ${cont_m}° metrô Começando a cansar</b> <br>`;
+            }else{
+                div_metro.innerHTML += `<b style="color:blue">Pegando o ${cont_m}° metrô</b><br>`;
+            }
+            cont_m++;
+        }
+    }
+</script>
+</html>

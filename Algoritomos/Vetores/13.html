@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="select_box"> Indique o resultado
+        <option value="Vitoria">Vitória</option>
+        <option value="Empate">Empate</option>
+        <option value="Derrota">Derrota</option>
+    </select>
+    <button onclick="registrar()">Registrar jogo</button> <br>
+    <div id="msg"></div>
+
+</body>
+</html>
+<script>
+    lista = [];
+    n_vitoria = [];
+    n_empate= [];
+    n_derrota = [];
+    function registrar(){
+        msg.innerHTML = ''
+        console.log('teste1')
+        lista.push(select_box.value);
+        var v_vitoria;
+        var v_derrota;
+        var v_empate;
+       
+        for (var i = 0; i <= lista.length; i ++) {
+            console.log('teste2')
+            if ((lista.indexOf('derrota')) == -1){
+                console.log('teste3')
+                n_derrota.push('derrota')
+            } 
+        }
+        for (var i = 0; i <= lista.length; i ++) {
+            if ((lista.indexOf('vitoria')) == -1){
+                n_vitoria.push('vitoria')
+            } 
+        }
+        for (var i = 0; i <= lista.length; i ++) {
+            if ((lista.indexOf('empate')) == -1){
+                n_empate.push('empate')
+            } 
+        }
+        for (var i = 0; i <= lista.length; i ++)
+        console.log('testetxt')
+        msg.innerHTML = `      O time teve: ${n_vitoria.length} vitórias, ${n_empate.length} empates, ${n_derrota.length}  derrotas <br>
+
+                            Pontuação total: ${(n_vitoria.length * 3) + (n_empate.length)} pontos <br>
+
+                            Aproveitamento: ${(n_vitoria.length * 3) + (n_empate.length * 3) + (n_derrota.length * 3) }% <br>`
+        
+        
+
+    }
+</script>

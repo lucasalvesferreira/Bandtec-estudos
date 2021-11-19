@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="sel_especie">
+        <option value="" >-- Escolha uma especie -- </option>
+        <option value="oviparos" onclick="Oviparos()">Ovíparos</option>
+        <option value="mamiferos" onclick="Mamifero()">Mamiferos</option>
+    </select>
+
+    <select id="sel_oviparo" style="display: none;">
+        <option value="">-- Escolha um oviparo -- </option>
+        <option value="galinha" onclick="Galinha()" >Galinha</option>
+        <option value="peixe" onclick="Peixe()">Peixe</option>
+        <option value="Tartaruga" onclick="Tarta()">Tartaruga</option>
+    </select>
+
+    <select id="sel_mamifero" style="display: none;">
+        <option value="">-- Escolha um Mamifero -- </option>
+        <option value="elefante" onclick="Elefante()">Elefante</option>
+        <option value="porco" onclick="Peixe()">Peixe</option>
+        <option value="coelho" onclick="Coelho()">Coelho</option>
+    </select>
+    
+    <div id="div_pedir" style="display:none">
+        Digite o valor de compra do animal<input id="" type="text">
+        <button onclick="Calcular">Calcula Imposto</button>
+    </div>
+    <div id="div_mostrar"></div>
+
+    
+</body>
+<script>
+    function Oviparos(){
+        sel_oviparo.style.display='block'; 
+    }
+    function Mamifero(){}
+
+    function Galinha(){}
+    function Peixe(){}
+    function Tarta(){}
+
+    function Elefante(){}
+    function Peixe(){}
+    function COelho(){}
+</script>
+</html>

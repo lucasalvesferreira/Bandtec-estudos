@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 8</title>
+</head>
+<body>
+    
+    <h1 style="color: chartreuse; "> Elevador do Lucas</h1>
+<br>
+    <b>Quantidade de homens e mulheres no elevador:</b>
+<br>   
+        Quantidade de homens: <input id="hom" placeholder="Ex:50"> 
+<br>
+        Quantidade mulheres: <input id="mul" placeholder="Ex:50">
+<br>
+    <button onclick="ligar()" style="background-color: darkmagenta; color: darkturquoise;" > Ligar Elevador </button>
+<br>
+
+        <div id="msg"></div>
+
+
+</body>
+</html>
+
+<script>
+    function ligar(){
+
+    var homens = hom.value * 90;
+    var mulheres = mul.value * 70;
+    var pesoTotal = Number(homens) + Number(mulheres);
+
+    if (pesoTotal < 500)    {
+        msg.innerHTML= `Elevador vai se mover, pois está com ${pesoTotal}kg`  
+    }
+
+    else{
+        msg.innerHTML= ` Alguém precisa descer. Precisa perder ${pesoTotal - 500}kg para mover o elevador`
+    }
+
+
+    }
+
+
+</script>

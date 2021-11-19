@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite quantas latinhas você consome por dia<input id = "qtd_latinha" type="text">
+    <button onclick="Calculo()">Quantos refris</button>
+    <div id="mostrar"></div>
+</body>
+<script>
+    function Calculo(){
+        var latinhas = qtd_latinha.value;
+        var result = latinhas * 365;
+        if (result >= 500 && result < 800){
+            mostrar.innerHTML = `Cuidado com a diabetes<br>
+                                 você consome ${result} por ano<br>
+                                 latinha por dia: ${latinhas}   `;        
+        }
+        else if (result >= 800) {
+            mostrar.innerHTML = `Cuidado ta prestes a morrer! SE CUIDA!!<br>
+                                 você consome ${result} por ano<br>
+                                 latinha por dia: ${latinhas}   `;    
+            
+        }
+        else{
+            mostrar.innerHTML = ` você consome ${result} por ano<br>
+                                 latinha por dia: ${latinhas}   `; 
+        }
+        
+    }
+</script>
+</html>

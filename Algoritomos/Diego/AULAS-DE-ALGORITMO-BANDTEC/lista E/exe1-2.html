@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite sua idade<input id="ipt_idade" type="text">
+    <button onclick="Verificar()">Ir pra festa</button>
+</body>
+<script>
+    function Verificar(){
+        var idade = ipt_idade.value;
+        if (idade <= 15){
+            alert('Sem chance! Vai estudar!');
+        }
+        else if(idade >15 && idade < 18){
+            alert('Pedir permissão pro responsavel');
+            alert('#partiuFesta');   
+        }
+        else {
+            alert('#partiuFesta');    
+        }
+        
+    }
+</script>    
+</html>

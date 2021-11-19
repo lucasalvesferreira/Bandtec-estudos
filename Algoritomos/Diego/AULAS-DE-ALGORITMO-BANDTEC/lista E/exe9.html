@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual é o valor da renda familiar<input id="ipt_renda" type="text"><br>
+    Qual o valor da prestação <input id="ipt_prest" type="text"><br>
+    <button onclick="Verificar()">Verificar financiamento</button><br>
+    <div id="div_mostrar">
+</body>
+<script>
+    function Verificar(){
+        var renda = ipt_renda.value;
+        var prestacao = ipt_prest.value;
+        var porc = (prestacao / renda)*100;
+        div_mostrar.innerHTML += `A prestação corresponde a ${porc.toFixed(1)}%<br>`;
+        
+        if(porc >30){
+            div_mostrar.innerHTML += `<b style="color:red">Será necessario complementar a renda familiar</b><br>`;
+        }
+    }
+</script> 
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite o valor da renda individual<input id="ipt_ind" type="text">
+    Digite o valor da renda familiar<input id="ipt_familia" type="text">
+    <button onclick="Calcular()">Terei o beneficio?</button>
+</body>
+<script>
+    function Calcular(){
+        var individual = ipt_ind.value;
+        var familiar = ipt_familia.value;
+        if(individual <=2000 || familiar <=3000){
+            alert("Você terá direito ao auxílio");
+        }
+        else{
+            alert("Sem direito ao auxílio");
+        }
+    }
+</script>
+</html>

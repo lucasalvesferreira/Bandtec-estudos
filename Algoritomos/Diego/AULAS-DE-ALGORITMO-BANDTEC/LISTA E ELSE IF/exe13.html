@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanças</title>
+</head>
+<body>
+    
+    Valor guardado: <span id="span_valor">0</span>
+     <br><br><br>
+    <button onclick="Guardar()">Guardar R$5</button>
+    <br><br><br>
+    <button onclick="Gastar()">Gastar R$10</button>
+
+    <br><br><br>
+    <div id="div_mostrar"></div>
+
+    
+</body>
+</html>
+ <script>
+    var dinheiro = 0;
+
+
+function Guardar() {
+    dinheiro = dinheiro + 5;
+    span_valor.innerHTML = dinheiro;
+
+    if(dinheiro >=0 && dinheiro <100 ){
+        div_mostrar.innerHTML = `<span style="color: blue;">Finanças OK! ✔</span>`;
+    }
+
+    else if(dinheiro >= 100){
+        div_mostrar.innerHTML = "#OSTENTAÇÃO" 
+    }
+
+    else if(dinheiro < (-20)){
+        div_mostrar.innerHTML = "Quase um Corithians!" 
+    }
+
+    else {
+        div_mostrar.innerHTML = "Finanças em perigo!! ⚠" 
+    }
+
+
+
+
+
+
+
+
+}
+function Gastar() {
+    dinheiro = dinheiro - 10;
+    span_valor.innerHTML = dinheiro;
+
+   
+    if(dinheiro >=0 && dinheiro <100 ){
+        div_mostrar.innerHTML = `<span style="color: blue;">Finanças OK! ✔</span>`;
+    }
+
+    else if(dinheiro >= 100){
+        div_mostrar.innerHTML = "#OSTENTAÇÃO" 
+    }
+
+    else if(dinheiro < (-20)){
+        div_mostrar.innerHTML = "Quase um Corithians!" 
+    }
+
+    else {
+        div_mostrar.innerHTML = "Finanças em perigo!! ⚠" 
+    }
+
+    
+}
+
+ </script>

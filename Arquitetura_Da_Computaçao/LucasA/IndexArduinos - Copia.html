@@ -1,0 +1,201 @@
+    <!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino API</title>
+
+    <title>Line Chart</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+	<script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+	<script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+	<style>
+		canvas {
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+		}
+	</style>
+
+
+</head>
+<body>
+   <div class="Graficos">
+
+    <div class="Grafico1">
+
+        <div>
+            <h1>Sensor LM35 - Temperatura</h1>
+                <section>
+                    <h2>Média: <label id='average'>0.00</label></h2>
+                </section>
+                <section style="width:50%">
+                    <canvas id="chart"></canvas>
+            <section>
+        </div>  
+    </div>
+
+    <div class="Grafico2">
+        <div>
+            <h1>Sensor DHT11 - Humidade</h1>
+                <section>
+                    <h2>Média: <label id='average2'>0.00</label></h2>
+                </section>
+                <section style="width:50%">
+                    <canvas id="chart2"></canvas>
+            <section>
+	    </div>
+
+    </div>
+
+   </div> 
+
+</body>
+</html>
+
+
+<script>
+
+    var context = document.getElementById("chart").getContext("2d");
+    context.canvas.width = 1000;
+    context.canvas.height = 300;
+    
+    var configuration = {
+        type: 'line',
+        data: {
+            datasets: [{
+                label: "Temperatura",
+                borderColor: ['#ff3232'],
+                backgroundColor: ['#ff7f7f']
+            }]
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                    distribution: 'series',
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }],
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Temperatura'
+                    },
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            },
+            animation: {
+                duration: 0
+            }
+        }
+    };
+    
+    var chart = new Chart(context, configuration);
+    var context2 = document.getElementById("chart2").getContext("2d");
+    context2.canvas.width = 1000;
+    context2.canvas.height = 300;
+    
+    var configuration2 = {
+        type: 'line',
+        data: {
+            datasets: [{
+                label: "Humidade",
+                borderColor: ['#00FF00'],
+                backgroundColor: ['#FF0000']
+            }]
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                    distribution: 'series',
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }],
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'humidade'
+                    },
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            },
+            animation: {
+                duration: 0
+            }
+        }
+    };
+    
+    var chart2 = new Chart(context2, configuration2);
+
+
+
+        this.lastIndexTemp = 0;
+        this.time = 0;
+
+
+        function get_data(){
+
+var http = new XMLHttpRequest();
+http.open('GET', 'http://localhost:3000/api', false);
+http.send(null);        
+
+var obj = JSON.parse(http.responseText);
+        
+if (obj.data.length == 0){
+    return;
+}
+
+var _lastIndexTemp = this.lastIndexTemp;
+this.lastIndexTemp = obj.data.length;
+listTemp = obj.data.slice(_lastIndexTemp);
+
+listTemp.forEach(data => {
+    //Máximo de 60 itens exibidos no gráfico
+    if (chart.data.labels.length == 10 && chart.data.datasets[0].data.length == 10){
+        chart.data.labels.shift();
+        chart.data.datasets[0].data.shift();
+    }
+
+    chart.data.labels.push(this.time++);
+    chart.data.datasets[0].data.push(parseFloat(data));
+    chart.update();
+});
+    
+
+
+
+
+if (obj.data2.length == 0){
+    return;
+}
+
+var _lastIndexTemp2 = this.lastIndexTemp2;
+this.lastIndexTemp2 = obj.data2.length;
+listTemp2 = obj.data2.slice(_lastIndexTemp2);
+
+listTemp2.forEach(data2 => {
+    //Máximo de 60 itens exibidos no gráfico
+    if (chart2.data.labels.length == 10 && chart2.data.datasets[0].data.length == 10){
+        chart2.data.labels.shift();
+        chart2.data.datasets[0].data.shift();
+    }
+
+    chart2.data.labels.push(this.time2++);
+    chart2.data.datasets[0].data.push(parseFloat(data2));
+    chart2.update();
+});
+
+document.getElementById('average').textContent = obj.average;
+document.getElementById('average2').textContent = obj.average2;
+		} 
+
+        setInterval(() => {
+			get_data();
+        }, 1000);

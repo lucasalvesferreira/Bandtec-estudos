@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio_11_vetor</title>
+</head>
+<body>
+    <h1>Lista de compras</h1>
+<br>
+Insira os produtos : <input id="ipt_produtos"><br>
+Insira o preço do produto: <input id="ipt_preco"><br>
+<button onclick="cadastrar()">Cadastrar</button>
+<button onclick="atualizar()">Atualizar Estoque</button>
+<br>
+
+<div id="msg"></div>
+
+</body>
+</html>
+<script>
+    var lista1=[];
+    var lista2=[];
+
+function cadastrar(){
+
+   lista1.push(ipt_produtos.value);
+   lista2.push(ipt_preco.value);
+
+}
+
+function atualizar(){
+    var soma = 0;
+   for (var index = lista2.length-1; index > -1; index--) {
+       
+    
+    //  soma = (Number(soma)+ Number (ipt_preco.value)).toFixed(2)
+     soma = (Number(soma)+ Number (lista2[index])).toFixed(2)
+       
+       msg.innerHTML=`<br>
+        Você tem ${lista1.length} produtos cadastrados em estoque<br>
+        Seu estoque vale R$${soma}<br>` 
+}
+
+}
+
+
+</script>

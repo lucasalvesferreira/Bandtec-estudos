@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mercado</h1>
+    <input id="id_ipt_produto" type="text"> Nome do produto <br>
+    <input id="id_ipt_preco" type="text">Preço de compra <br>
+    <br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br>
+    <button onclick="relatorio()">Relatório de estoque</button> <br>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    nome = [];
+    valor = [];
+    function cadastrar(){
+       
+        var ipt_produto = id_ipt_produto.value;
+        var ipt_preco = id_ipt_preco.value;
+        nome.push(ipt_produto);
+        valor.push(Number(ipt_preco));
+
+    }
+    function relatorio(){
+        msg.innerHTML = '';
+        caro = 0;
+        barato = 9999;
+        total = 0;
+        msg.innerHTML += `Total de produtos: ${nome.length} <br> <br>`
+        for (var i = 0; i < nome.length; i++) {
+            msg.innerHTML += ` Produto ${i + 1}: ${nome[i]} <br> Preço de compra: R$${valor[i]}. Vender por R$${valor[i] + (valor[i] * 0.25)} <br> <br>`
+        }
+        for (var i = 0; i < valor.length; i++) {
+            if (caro < valor[i]){
+                caro = valor[i]
+            }
+        }
+        for (var i = 0; i < valor.length; i++) {
+            if (barato > valor[i]){
+                barato = valor[i]
+            }
+        }
+        for (var i = 0; i < valor.length; i++) {
+            total += valor[i];
+        }
+        msg.innerHTML += `Produto mais caro: R$${ caro + (caro * 0.25)} <br> Produto mais barato: R$${ barato + (barato * 0.25)} <br> Valor total dos produtos: R$${ total + (total * 0.25)} <br>
+        A média de preço de venda dos produtos: R$${ ((total + (total * 0.25)) / valor.length).toFixed(2)} <br>`
+    }
+</script>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div id='div_ver'>
+        <h1>Seja bem vindo ao OCNAB</h1>
+
+        <h3>Simulação de emprestimos e investimentos</h3>
+
+        <h5>Entre com os dados de sua conta</h5>
+        <input id="ipt_conta" type="text" placeholder="Conta">
+        <input id="ipt_digito" type="text" placeholder="Digito">
+        <input id="ipt_senha" type="text" placeholder="Senha">
+
+        <button onclick="Simular()">Simular</button>
+    </div>
+    
+    <div id='box_emp' style="display: none;">
+        <h1>O Banco OCNAB é a sua melhor opção</h1>
+
+        <h3>Emprestimos e Investimos com as melhores taxas do mercado</h3>
+
+        <h5>Entre com os dados da sua simulação</h5>
+
+        Valor da Operação <input id="ipt_valor" type="text">
+        <select id="sel_opcao">
+            <option value="">Selecione a Operação</option>
+            <option value="Emprestimo">Emprestimo</option>
+            <option value="Investimento">Investimento</option>
+        </select>    
+        <select id="sel_prazo">
+            <option value="">Selecione o prazo</option>
+            <option value="curto">Curto</option>
+            <option value="medio">Medio</option>
+            <option value="longo">Longo</option>
+        </select>
+        <button onclick="result()">Mostrar o resultado</button> 
+        
+    </div>
+    <div id="div_result" style="display: none;">
+        <br><button  onclick="Voltar()">Voltar a simulação</button><br>
+    </div>
+    
+  
+</body>
+<script>
+    var conta = 0;
+    var digito = 0;
+    var senha = 0;
+    var cont = 0;
+    var emp_curt = 0;
+    var emp_med = 0;
+    var emp_longo = 0;
+    var inv_curt = 0;
+    var inv_med = 0;
+    var inv_longo = 0;
+
+    function Simular(){
+        conta = Number(ipt_conta.value);
+        digito = Number(ipt_digito.value);
+        senha = ipt_senha.value;
+        confirmacao = conta % 11;
+
+        if(conta != 0){
+            if(digito == confirmacao){
+                if(senha == 'manaus' && (digito == 0 ||digito == 1 || digito == 2 || digito == 3)){
+                    alert("Senha Correta");
+                    div_ver.style.display = 'none';
+                    box_emp.style.display = 'block';
+                }
+                else if(senha == 'recife' && (digito == 4 ||digito == 5 || digito == 6 || digito == 7)){
+                    alert("Senha Correta");
+                    div_ver.style.display = 'none';
+                    box_emp.style.display = 'block';
+                }
+                else if(senha == 'fortaleza' && (digito == 8 ||digito == 9 || digito == 10 )){
+                    alert("Senha Correta");
+                    div_ver.style.display = 'none';
+                    box_emp.style.display = 'block';
+                }
+                else{
+                    alert("Senha incorreta");
+                }
+
+
+            }
+            else{
+                alert("Numero de confirmação diferente do digito");
+            }
+
+        }
+        else{
+            alert("Numero da conta não pode ser 0");
+        }
+    }
+    function result(){
+        
+        var valor = Number(ipt_valor.value);
+        var opcao = sel_opcao.value;
+        var prazo = sel_prazo.value;
+        emp_curt = valor * 0.24;
+        emp_med = valor * 0.16;
+        emp_longo = valor * 0.10;
+        inv_curt = valor * 0.05;
+        inv_med = valor * 0.08;
+        inv_longo = valor * 0.12;
+        div_result.style.display = 'block';
+        box_emp.style.display = 'none';
+
+        cont++;
+        if(prazo == "curto"){
+            alert("Esta operação está condicionada ao seu perfil");
+            if(opcao == "Emprestimo"){
+                div_result.innerHTML += `Simulação ${cont} – Para o empréstimo de R$${valor.toFixed(2)} no ${prazo} prazo será cobrado os juros de R$ ${emp_curt.toFixed(2)} ao ano<br>`;
+            }
+            else{
+                div_result.innerHTML += `Simulação ${cont} – Investindo R$${valor.toFixed(2)} no ${prazo} prazo o seu rendimento será de R$${inv_curt.toFixed(2)} ao ano<br>`;
+            }
+        }
+        else if(prazo == "medio"){
+            alert("Esta operação está condicionada ao seu perfil");
+            if(opcao == "Emprestimo"){
+                div_result.innerHTML += `Simulação ${cont} – Para o empréstimo de R$${valor.toFixed(2)} no ${prazo} prazo será cobrado os juros de R$ ${emp_med.toFixed(2)} ao ano<br>`;
+            }
+            else{
+                div_result.innerHTML += `Simulação ${cont} – Investindo R$${valor.toFixed(2)} no ${prazo} prazo o seu rendimento será de R$ ${inv_med.toFixed(2)} ao ano <br>`;
+            }
+        }
+        else{
+            if(opcao == "Emprestimo"){
+                div_result.innerHTML += `Simulação ${cont} – Para o empréstimo de R$${valor.toFixed(2)} no ${prazo} prazo será cobrado os juros de R$ ${emp_longo.toFixed(2)} ao ano<br>`;
+            }
+            else{
+                div_result.innerHTML += `Simulação ${cont} – Investindo R$${valor.toFixed(2)} no ${prazo} prazo o seu rendimento será de R$ ${inv_longo.toFixed(2)} ao ano<br>`;
+            }
+        }
+
+    }
+    function Voltar(){
+        box_emp.style.display = 'block';
+        div_result.style.display = 'none';
+    }
+</script>
+</html>

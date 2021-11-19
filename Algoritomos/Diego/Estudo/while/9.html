@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>Exercicio 9</h1>
+    <input id="id_num" type="text" placeholder="Qual numero?">
+    <input id="id_frase" type="text" placeholder="Qual frase?">
+    <button onclick="papagaio()">Papagaio</button>
+    <span id="msg"></span>
+</body>
+</html>
+<script>
+    function papagaio() {
+        msg.innerHTML = '';
+        contador = 0;
+        var frase = id_frase.value;
+        var num = Number(id_num.value);
+        while (contador < num ){
+            msg.innerHTML += `<br>${frase}<br>`
+            console.log('teste')
+            contador ++
+        }
+    }
+</script>
+
+
+<!-- 9. Crie um programa em HTML/JS o qual:
+
+a) Pergunte ao usuário um número
+
+b) Pergunte ao usuário uma frase
+
+c) Ao clicar num botão "Papagaio", a frase é exibida N vezes em N alerts, onde N é o número informado em a) -->

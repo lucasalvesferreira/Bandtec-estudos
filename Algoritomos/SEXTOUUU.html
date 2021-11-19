@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade sexta 05/11</title>
+</head>
+
+<body>
+
+    <h1>Roleta Amiga!!</h1><br>
+
+    <div id="roleta" style="display: block;">
+
+        Numero de aposta: <input id="num_apo"><br>
+        Cor da aposta:
+        <Select id="tavares">
+            <option value="" id="escol"><b>Escolha uma cor...</b> </option>
+            <option value="vermelho" style="color: red;"><b>Vermelho</b> </option>
+            <option value="amarelo" style="color: rgb(255, 251, 0);"><b>Amarelo</b> </option>
+            <option value="verde" style="color: rgb(21, 255, 0);"><b>Verde</b> </option>
+        </Select>
+        <br>
+        Valor da aposta: <input id="val_apo"><br>
+        Quantidade de apostas: <input id="qtd_apo"><br>
+        <br>
+        <button onclick="sort()">Sortear</button>
+        <br>
+        <br>
+
+        <div id="msg"></div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    function
+        sort() {
+        if (num_apo.value <= 0 || num_apo.value >= 37) {
+            alert('Escolha um numero entr 1 e 36!')
+        }
+        else if (tavares.value == escol.value) {
+            alert('Escolha uma cor')
+        }
+        else if (val_apo.value <= 0 || val_apo.value > 100) {
+            alert('Aposta invalida, aposte entre 1 e 100 reais para continuar!')
+        }
+        else if (qtd_apo.value <= 0) {
+            alert('Favor digite a quantidade de apostas!')
+        }
+
+        else { Sort2() }
+    }
+    function
+        Sort2() {
+        msg.innerHTML = '';
+
+        for (let index = 1; index <= qtd_apo.value; index++) {
+            msg.innerHTML = `Sua aposta de R$ ${val_apo.value} por rodada foi no número ${num_apo.value} e na cor ${tavares.value}`;
+
+            var cor_random = (Math.random() * (3 - 1) + 1).toFixed(0);
+            var num_random = (Math.random() * (36 - 1) + 1).toFixed(0);
+            var ax_cor = "";
+
+            var ax_vermelho = "vermelho";
+            var ax_amarelo = "amarelo";
+            var ax_verde = "verde";
+
+            if (cor_random == 1) { ax_cor = ax_vermelho }
+            else if (cor_random == 2) { ax_cor = ax_amarelo }
+            else if (cor_random == 3) { ax_cor = ax_verde }
+
+            var soCor = 0;
+            var soNum = 0;
+            var numCor = 0;
+
+
+            if (ax_cor == ax_vermelho && tavares.value == 'vermelho' && num_random == num_apo.value)
+             { msg.innerHTML += `${index} sorteio – ${ax_cor}, número ${num_random} – você ganhou 2,00 seu saldo ficou em R$ 2,00` }
+
+        }
+
+    }
+</script>

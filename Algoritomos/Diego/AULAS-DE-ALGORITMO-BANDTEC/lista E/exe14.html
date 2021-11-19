@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite a primeira Nota<input id="ipt_N1" type="text">
+    Digite a segunda Nota<input id="ipt_N2" type="text">
+    <button onclick="Verificar()">Verificar situação</button>
+
+</body>
+<script>
+    function Verificar(){
+        var N1 = Number(ipt_N1.value);
+        var N2 = Number(ipt_N2.value);
+        var media = (N1 + N2)/2;
+        if(media >= 6){
+            alert("Parabens, aprovado!");
+        }
+        else{
+            alert("Tente outra vez");
+        }
+    }
+</script>
+</html>

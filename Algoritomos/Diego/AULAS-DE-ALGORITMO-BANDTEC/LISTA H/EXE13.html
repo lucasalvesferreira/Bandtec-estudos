@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    De quanto em quanto tempo você faz musculação<input id="ipt_dias" type="text"><br>
+    <button onclick="Exibir()">Exibir rotina mensal</button><br>
+    <span id="mostrar"></span>
+</body>
+<script>
+    function Exibir(){
+        var dias = ipt_dias.value;
+        var cont1 = 0;
+        mostrar.innerHTML = '';
+        mostrar.innerHTML += `Dia ${cont1 + 1} - <b>Musculação</b><br>`;
+        while(cont1 < 30){
+        
+            cont1++;
+            if(cont1 % dias == 0){
+                mostrar.innerHTML += `Dia ${cont1 + 1} - <b>Musculação</b><br>`;
+            }
+            else{
+                mostrar.innerHTML += `Dia ${cont1 + 1} - Comer, Dormir, etc<br>`;
+            }
+            
+
+            
+        }
+    }
+</script>
+</html>

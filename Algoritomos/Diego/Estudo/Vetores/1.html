@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <input id="ipt_fruta" type="text"> Digite a fruta <br>
+        <button onclick="pesquisar()">Pesquisar</button>
+        <br>
+        <button onclick="resultado()">Mostrar o Resultado</button> <br>
+        <div id="msg"></div>
+</body>
+</html>
+<script>
+    frutas = [];
+    function pesquisar(){
+        frutas.push(ipt_fruta.value);
+        ipt_fruta.value = '';
+
+    };
+    function resultado(){
+        if (frutas.indexOf(ipt_fruta.value) == -1 ) 
+
+        msg.innerHTML = ``
+    }
+</script>

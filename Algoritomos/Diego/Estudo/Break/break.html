@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break_3</title>
+</head>
+
+<body>
+    <h1>Marvel vs DC</h1>
+    <br>
+    Escolha entre um:
+
+    <select id="slc_opt">
+        <option value="Escolha...">Escolha uma:</option>
+        <option value="marvel">Marvel</option>
+        <option value="dc">DC</option>
+    </select>
+    <br>
+    <br>
+    <button onclick="bt_programacao()">Ver programação semanal na TV</button>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+
+<script>
+    var ax_marvel = 0;
+    var ax_dc = 0;
+
+    function bt_programacao() {
+
+        ax_marvel = 0;
+        ax_dc = 0;
+        if (slc_opt.value == "Escolha...") {
+            alert('Escolha uma das opções')
+        }
+
+        for (var index = 1; index <= 5; index++) {
+
+            var sorteio = (Math.random() * (2) + 1).toFixed(0);
+            
+            if (sorteio == 1) {ax_marvel++;}
+            else if(sorteio == 2) { ax_dc++; };
+
+
+            if (ax_marvel > ax_dc && slc_opt.value === "marvel") {
+                msg.innerHTML = `Você verá um filme que gosta no ${index} dia"`;
+                break;
+                
+            }
+            else if (ax_dc > ax_marvel && slc_opt.value === "dc") {
+                msg.innerHTML = `Você verá um filme que gosta no ${index} dia"`;
+                break;
+            }
+            else{msg.innerHTML ='É, ou lê um livro ou assiste um filme que não gosta mesmo';
+
+
+        }
+    }
+    }
+
+</script>

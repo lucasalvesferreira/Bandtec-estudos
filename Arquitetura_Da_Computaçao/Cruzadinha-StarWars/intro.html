@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylcomeço.css">
+  <title>Start wars</title>
+</head>
+<body>
+  <div class="fade" style="display: block;" id="someinicio"></div>
+  <section class="star-wars">
+    <div class="crawl">
+      <div class="title">
+        <p>Episódio I</p>
+        <h1>A Cruzadinha FANTASMA</h1>
+      </div>
+
+      <p>A República Galáctica está em grande tumulto. Em disputa estão os jornais sobre as rotas comerciais para os sistemas estelares exteriores.</p>
+      <p>Na esperança de resolver o assunto com um bloqueio de implacáveis naves de guerra, a gananciosa federação de comércio de cruzadas interrompe todos os carregamentos para o pequeno planeta Naboo. </p>
+      <p>Enquanto o Congresso da República debate incessantemente esta alarmante cadeia de acontecimentos das cruzdas, o Supremo Chanceler mandava secretamente dois Cavaleiros Jedi, guardiões da paz e da justiça na galáxia, para resolver o conflito...</p>
+      <p>Intruções do Jogo</p>
+      <p>Clique em "Começar o Jogo" para iniciar uma partida</p>
+      <p>Perguntas serão exibidas na parte inferior do quadro </p>
+      <p>Insira a sua resposta na caixa de texto e clique em "Verificar" para conferir a sua resposta</p>
+      <p>A partida acaba quando as 16 questões forem respondidas</p>
+    </div>
+
+    <div id="futer" style="display: none;"> 
+    <a href="index.html">
+      <button style="background: #121414; border-radius: 6px; padding: 15px; cursor: pointer; color: #c5a112; border: none; font-size: 16px;">Jogo ⏩</button>
+    </a>
+    </div>
+               
+    
+    <audio src="John_Williams_Star_Wars.mp3" id="my_audioInicio" loop="loop"></audio>
+
+  </section>
+</body>
+</html>
+
+  <script>
+  
+   
+    setTimeout(function(){
+
+      document.getElementById("my_audioInicio").play();
+      console.log('your audio is started just now');
+
+      futer.style.display = 'block'
+    }, 1500)
+
+
+  </script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Temperaturas:</h1>
+
+    <input id='temp' placeholder="Temperatura do ambiente" ><br>
+    <button onclick="clima()" style="background-color: blueviolet;color: chartreuse;">Verificar clima</button><br>
+
+
+        <div id="msg"></div>
+
+</body>
+</html>
+
+
+
+<script>
+    
+    function clima(){
+        
+        
+        if(temp.value < 10) {
+        msg.innerHTML = `<img src="https://claudia.abril.com.br/wp-content/uploads/2020/02/receita-pizza-caseira-dois-queijos.jpg" style= "width: 300px;">`;}
+            
+        else { msg.innerHTML = `<img src="https://live.staticflickr.com/5192/6910977774_08d00497a5_b.jpg" style="width: 350px;">`}
+    }
+                
+</script>

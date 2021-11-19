@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de peso ✔</title>
+</head>
+<body>
+    
+    Insira o peso:
+    <input id="inp_peso">
+
+    <button onclick="Calcular()">Avaliar</button>
+
+</body>
+</html>
+<script>
+function Calcular(){
+    if(inp_peso.value == 18.3){
+        alert("Peso perfeito");
+    }
+   
+    else if(inp_peso.value <= 13.5){
+        alert("Abaixo do peso");
+    }
+    else if(inp_peso.value <= 21.3){
+        alert("Peso na media");
+    }
+    else{
+        alert("Acima do peso");
+    }
+
+}
+
+
+
+</script>

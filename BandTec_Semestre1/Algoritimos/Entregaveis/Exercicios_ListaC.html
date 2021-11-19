@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cofrinho</title>
+</head>
+<body bgcolor ="grey">
+    
+    <h1>Cofrinho de Dinheiro:</h1>
+
+   
+    <h2>Valor guardado no cofrinho: R$ <b id="Valor_cof">0</b></h2> <br>
+    <br>
+   
+    <i>Insira o valor a guardar: </i>
+        <input  id =" Valor" placeholder="R$ 0,00">
+        <button id =" Depositar" onclick= "Deposito()" style="background-color: darkturquoise;color: black;">Depositar</button>
+        <button id =" tirar" onclick= "Retirada()" style="background-color: darkturquoise;color: black;"> Retirar Dinheiro </button>
+        <br>
+        <br>
+        Quantidade de depositos feitos: <b id="Dep_fts">0</b><br>
+        Quantidade de Retiradas feitas: <b id="Ret_fts">0</b><br>
+
+</body>
+</html>
+
+<script>
+
+var x_Cofre = 0;
+var y_Depositar= 0;
+
+
+
+function Deposito(){
+    x_Cofre= `${Number(Valor.value) + Number(x_Cofre)}`;
+    y_Depositar ++;
+
+Valor_cof.innerHtml= x_Cofre;
+Dep_fts.innerHtml= y_Depositar;
+
+}
+
+</script>

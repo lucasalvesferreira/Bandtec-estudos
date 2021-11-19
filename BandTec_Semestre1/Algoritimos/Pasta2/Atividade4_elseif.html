@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade4_elseIf</title>
+</head>
+
+<body>
+    <h1> Programa para avaliaçao de peso de crianças de 5 anos:</h1>
+    <br>
+    Digite o peso da criança:<input id="miau" onchange="peso()" placeholder="Ex:45">
+    <br>
+    <div id="msg"></div>
+</body>
+</html>
+
+<Script>
+    function peso() {
+
+        if (miau.value < 13.5) {
+            msg.innerHTML = `<b style="color: rgb(224, 47, 255);"> Abaixo do peso </b>`
+        }   
+         
+        else if  (miau.value > 21.2)
+        { msg.innerHTML = `<b style="color: rgb(255, 47, 47);"> Acima do peso </b>` }
+
+        else if (miau.value   < 21.2) 
+        { msg.innerHTML = `<b style="color: rgb(255, 234, 47);"> Peso na média </b>` }
+       
+        else if (miau.value = 18.3)
+         { msg.innerHTML = `<b style="color: greenyellow;"> Peso perfeito </b>` } 
+         
+        
+    }
+
+</Script>

@@ -1,0 +1,12 @@
+
+<h1>Brasil x Alemanha</h1>
+<button onclick="Brasil()">Gol do Brasil </button>
+<button onclick="Alemanha()">Gol do Alemanha </button>
+<button onclick="zerar()">Recomeçar partida</button>
+<h3><b>Tempo real do Jogo:</b></h3>
+<div id="Gol"></div>
+<script>
+    function Brasil(){ Gol.innerHTML +='<span style="color: green;">Gol do Brasil</span><br>'}
+    function Alemanha(){ Gol.innerHTML +='<span style="background-color: red;color: yellow;">Gol da Alemanha<span><br>'}
+    function zerar(){ Gol.innerHTML = ' '}
+</script>

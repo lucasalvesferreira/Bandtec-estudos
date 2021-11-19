@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequencia</title>
+</head>
+<body>
+    
+        <h1 style="color: brown;">Sistema de Frequencia</h1>
+<br>
+        Digite sua Frequencia: <input id="freq" placeholder="Ex:50"><br>
+            <button onclick="Analisar()" style="color: chocolate;background-color: cyan;">Analisar frequência </button>
+<br>
+        <div id="msg" style="display: none;"> 
+            <img src="https://thumbs.dreamstime.com/b/turista-masculino-com-trouxa-que-toma-uma-imagem-com-c%C3%A2mera-36215885.jpg"  style='width: 300px;' >
+        </div>
+
+        <div id="msg2" style="display: none;">
+            <Img src="https://static.quizur.com/i/b/5747891e74cc93.67717206pessoas-inteligentes.jpg"style='width: 300px;'>
+        </div>
+</body>
+</html>
+
+
+<script>
+function Analisar(){
+
+    if (freq.value < 50) {  
+        msg.style.display ='block';
+        msg2.style.display = "none"
+    }
+    else{
+        msg2.style.display = "block"
+        msg.style.display ='none';
+    }
+
+}
+
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Reforço</h1>
+    <input id="ipt_nome" type="text">Digite o nome do aluno <br>
+    <input id="ipt_nota" type="text">Digite a nota  <br>
+    <button onclick="mostrar()">Cadastrar</button>
+    <button onclick="media()">Media</button> <br> <br> <br>
+    <div id="msg"></div>
+    <input id="ipt_reforco" type="text"> Nota para reforço <br> <button onclick="reforco()">Ver reforço</button>
+    <div id="msg2"></div>
+
+</body>
+</html>
+<script>
+    nome = [];
+    nota = [];
+    
+   
+    function mostrar(){
+        msg.innerHTML = '';
+       
+        v_nome = ipt_nome.value
+        v_nota = ipt_nota.value;
+        
+        nome.push(v_nome);
+        nota.push(Number(v_nota));
+        
+    // 
+}
+
+function reforco(){
+    console.log(nota)
+    for (var i = 0; i < nota.length; i++){
+        if (nota[i] >= 6) {
+                msg.innerHTML += `${nota[i]}, ${nome[i]} <br>`
+                }    
+            }
+        }
+
+    function media(){
+
+    }
+</script>

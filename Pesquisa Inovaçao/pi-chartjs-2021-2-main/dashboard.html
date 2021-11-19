@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!--
+      script que incorpora um arquivo javascript externo, onde passamos o src (source - fonte) 
+      do arquivo com uma URL ou o nome do arquivo, caso estejam no mesmo diretório
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- 
+    isso faz com que o arquivo/documento dashboard.html, possa utilizar de funções e outras utilidades 
+    desse código-fonte fornecido pelo CDN (Google it) do ChartJS
+  -->
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <h1>Projeto <span class="highlight">IOT</span> Revolucionário</h1>
+    </div>
+  </div>
+
+  <div class="dash-container">
+    <!-- Gráfico de Linhas -->
+    <div class="graph">
+      <canvas id="chartLine" style="width: 100%; height: 100%;"></canvas>
+    </div>
+
+    <!-- Gráfico de Barras -->
+    <div class="graph">
+      <canvas id="chartBar" style="width: 100%; height: 100%;"></canvas>
+    </div>
+
+    <!-- Grafico Pizza/Torta -->
+    <div class="graph">
+      <canvas id="chartPie" style="width: 100%; height: 100%;"></canvas>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+  // gráfico de Linha
+  var ctxLine = document.getElementById("chartLine").getContext("2d");
+  var rotulosLine = ["2011", "2012", "2013", "2014", "2015", "2017", "2018", "2019", "2020", "2021"];
+  var dataLine = [540, 622, 678, 724, 788, 880, 937, 954, 998, 1045, 1100];
+  var configLine = {
+    type: 'line',
+    data: {
+      labels: rotulosLine, // referenciando a variável de rótulos (labels) para o gráfico de linha
+      datasets: [
+        {
+          label: 'Salario minimo',
+          data: dataLine, // referenciando a variável de dados para o gráfico de linha
+          backgroundColor: [
+            '#FF000022',
+            '#FFFF0022',
+            '#FF00FF22',
+            '#00FFFF22',
+            '#99009922',
+            '#99990022',
+            '#F0F00022',
+            '#65002222',
+          ],
+          borderColor: [
+            '#FF0000',
+            '#FFFF00',
+            '#FF00FF',
+            '#00FFFF',
+            '#990099',
+            '#999900',
+            '#F0F000',
+            '#650022',
+          ],
+          borderWidth: 1
+        }
+      ]
+    },
+    options: {
+      // por padrão, vem como 'true', e faz com que o gráfico se 'mantenha com o mesmo aspecto de proporção', não ficando responsivo 
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+        }
+      }
+    }
+  }
+  var ax_chartLine = new Chart(ctxLine, configLine); // criando o gráfico, chamando o new Chart da biblioteca, passando o contexto e as configurações
+
+
+  // gráfico de Barras
+  var ctxBar = document.getElementById("chartBar").getContext("2d");
+  var rotulosBar = ["Brasil(total)","Norte", "Nordeste", "Sudeste", "Sul", "Centro-Oeste"] ;
+  var dataBar = [11, 10.6, 13.6, 11.4, 6.8, 9.3 ];
+  var configBar = {
+    type: 'bar',
+    data: {
+      labels: rotulosBar, // referenciando a variável de rótulos (labels) para o gráfico de barras
+      datasets: [
+        {
+          label: 'Desemprego por regiao',
+          data: dataBar, // referenciando a variável de dados para o gráfico de barras
+          backgroundColor: [
+            '#FF000022',
+            '#FFFF0022',
+            '#FF00FF22',
+            '#00FFFF22',
+            '#99009922',
+            '#99990022',
+            '#F0F00022',
+            '#65002222',
+          ],
+          borderColor: [
+            '#FF0000',
+            '#FFFF00',
+            '#FF00FF',
+            '#00FFFF',
+            '#990099',
+            '#999900',
+            '#F0F000',
+            '#650022',
+          ],
+          borderWidth: 1
+        }
+      ]
+    },
+    options: {
+      // por padrão, vem como 'true', e faz com que o gráfico se 'mantenha com o mesmo aspecto de proporção', não ficando responsivo
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+        }
+      }
+    }
+  }
+  var ax_chartBar = new Chart(ctxBar, configBar); // criando o gráfico, chamando o new Chart da biblioteca, passando o contexto e as configurações
+
+
+  // gráfico de Pizza/Torta
+  var ctxPie = document.getElementById("chartPie").getContext("2d");
+  var rotulosPie = ["Norte", "Nordeste", "Sudeste", "Sul", "Centro-Oeste"];
+  var dataPie = [1711, 1539, 2585, 2499, 2498];
+  var configPie = {
+    type: 'pie',
+    data: {
+      labels: rotulosPie, // referenciando a variável de rótulos (labels) para o gráfico de pizza/torta
+      datasets: [
+        {
+          label: 'Media de salario por regiao',
+          data: dataPie, // referenciando a variável de dados para o gráfico de pizza/torta
+          backgroundColor: [
+            '#FF000022',
+            '#FFFF0022',
+            '#FF00FF22',
+            '#00FFFF22',
+            '#99009922',
+            '#99990022',
+            '#F0F00022',
+            '#65002222',
+          ],
+          borderColor: [
+            '#FF0000',
+            '#FFFF00',
+            '#FF00FF',
+            '#00FFFF',
+            '#990099',
+            '#999900',
+            '#F0F000',
+            '#650022',
+          ],
+          borderWidth: 1
+        }
+      ]
+    },
+    options: {
+      // por padrão, vem como 'true', e faz com que o gráfico se 'mantenha com o mesmo aspecto de proporção', não ficando responsivo
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+        }
+      }
+    }
+  }
+  var ax_chartPie = new Chart(ctxPie, configPie); // criando o gráfico, chamando o new Chart da biblioteca, passando o contexto e as configurações
+
+
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite a quantidade de elefantes<input id="ipt_qtd" type="text">
+    <button onclick="Atazanar()">Atazanar a médium</button><br>
+    <span id="mostrar"></span>
+</body>
+<script>
+    function Atazanar(){
+        var qtd = ipt_qtd.value;
+        var cont = 1;
+        var frase = 'incomodam';
+        mostrar.innerHTML = "";
+        while(cont < qtd){
+            frase = frase + ', incomodam'
+            cont++;
+            mostrar.innerHTML += `1 elefante incomoda muita gente<br>
+            ${cont} elefantes, ${frase}, muito mais<br>`
+           
+        }
+    }
+</script>
+</html>

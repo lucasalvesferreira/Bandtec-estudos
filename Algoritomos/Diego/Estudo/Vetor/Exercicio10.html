@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas linhas de onibus</title>
+</head>
+<body>
+  
+    <h1>Linhas de onibus</h1>
+    <br>
+    <br>
+Digite o onibus que pegou: <input id="linhas" placeholder="Linha do bus">
+<button onclick="cadastrar()">Gravar buzão</button>
+<br>    
+Digite a linha que ja pegou: <input id="pegas" placeholder="Linha do bus ja utilizadas">
+<button onclick="Pesquisar()">Pesquisar</button>
+<br>
+<br>
+<div id="msg"></div>
+<br>
+<div id="msg2"></div>
+
+
+</body>
+</html>
+
+<script>
+    var lista  = [];
+    var lista2 = [];
+
+function cadastrar(){
+
+lista.push(linhas.value);
+msg.innerHTML='';
+
+for (var index = lista.length-1; index > -1; index--) {    
+        msg.innerHTML +=`${lista[index]}<br>`; }
+}
+
+function Pesquisar (){
+msg2.innerHTML = '';
+var count = 1;
+
+    if(lista.indexOf(pegas.value) == -1){
+
+        msg2.innerHTML += `Você nunca pegou essa linha ${pegas.value}<br>`;
+    }
+    else {
+        for (var index = 0; index <= lista.length -1; index++) {
+            lista2.push(lista[index])
+            if(pegas.value == lista2[index]){
+                console.log('teste')
+                msg2.innerHTML = `Você ja pegou o onibus ${count++}vezes`
+
+            }
+            
+        }
+    }
+
+   
+}
+</script>

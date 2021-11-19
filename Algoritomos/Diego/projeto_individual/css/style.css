@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    width: 100vw;
+    height: 10vh;
+    background-color: blueviolet;
+}
+.imagens{
+    width: 100vw;
+    height: 60vh;
+    background-color: chocolate;
+}
+
+.meio{
+    width: 100vw;
+    height: 60vh;
+    background-color: darkgoldenrod;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.conteudo{
+    width: 70%;
+    height: 100%;
+    background-color: gold;
+}
+.rodape{
+    width: 100vw;
+    height: 10vh;
+    background-color: darkmagenta;
+}

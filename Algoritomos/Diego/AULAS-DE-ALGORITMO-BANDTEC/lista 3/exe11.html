@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div_valor">
+    </div>    
+    Digite o valor a ser depositado <input id="ipt_deposito" type = "text" ><br>
+    <button onclick="Depositar()">Deposita</button><br>
+    <button onclick="Tirar()">Tirar toda a grana</button>
+</body>
+<script>
+    var cofrinho = Number(0.00);
+    var qtd_depo = Number(0);
+    var qtd_ret = Number(0);
+
+    div_valor.innerHTML = `Valor guardado no cofrinho R$ ${cofrinho.toFixed(2)}`;
+    function Depositar(){
+        var valor = Number(0);
+        valor = Number(ipt_deposito.value);
+        cofrinho += valor;     
+        qtd_depo ++;
+        div_valor.innerHTML = `Valor guardado no cofrinho R$ ${cofrinho.toFixed(2)}
+                               <br> Quantidade de deposito feitos: <b>${qtd_depo} </b>
+                               <br> Quantidade de retirada feitos: <b>${qtd_ret} </b>`;
+
+    }
+    function Tirar(){
+        cofrinho = cofrinho - cofrinho;
+        qtd_ret ++;
+        div_valor.innerHTML = `Valor guardado no cofrinho R$ ${cofrinho.toFixed(2)}
+                               <br> Quantidade de deposito feitos: <b>${qtd_depo} </b>
+                               <br> Quantidade de retirada feitos: <b>${qtd_ret} </b>`;
+    }
+</script>
+</html>

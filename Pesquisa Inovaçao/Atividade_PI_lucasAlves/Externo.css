@@ -1,0 +1,35 @@
+
+        #div1{
+            background-color: #fbff00;
+            width: 500px;
+            height: 500px;
+        }
+
+
+        .div2{
+            background-color: #505cff;
+            height: 50%;
+            width: 50%;
+        }
+
+            p{
+            color: aliceblue;
+            background-color: rgb(207, 49, 186);
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .div3{
+            width: 50vw; 
+            height: 50vh; 
+            background-color: rgb(101, 255, 62);
+
+        }
+        
+        #div4{
+
+            width: 75vw; 
+            height: 50%; 
+            background-color: rgb(224, 21, 21);
+        }
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="ipt_linhas" type="text" placeholder="Onibus na semana"> 
+    <button onclick="gravar()">Gravar buzão</button>
+    <button onclick="pesquisar()">Pesquisar</button> 
+    <div id="msg"></div> <br>
+    <div id="msg2"></div> 
+</body>
+</html>
+<script>
+    lista = [];
+    num = [];
+    function gravar() {
+        msg.innerHTML = '';
+        var v_linhas = ipt_linhas.value;
+        lista.push(v_linhas);
+        for (var i = lista.length -1; i >= 0; i --) {
+            msg.innerHTML += `${lista[i]} <br>`
+        }
+        
+    }
+    function pesquisar (){
+        msg2.innerHTML = ''
+        var count = 1
+        if (lista.indexOf(ipt_linhas.value) == -1) {
+            
+            msg2.innerHTML += `Você nunca pegou a linha ${ipt_linhas.value} <br>` 
+        } else {
+            for (var i = 0; i <= lista.length -1 ; i ++) {
+                num.push(lista[i])  
+
+                if (ipt_linhas.value == num[i]){
+                   
+                    msg2.innerHTML = `Você já pegou o onibus ${count ++} vezes. `
+                }
+
+            }
+            
+        }
+    }
+</script>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triatro</title>
+</head>
+<body>
+    Nome<input id="ipt_nome" type="text"><br>
+    Idade<input id="ipt_idade" type="text"><br>
+    Selecione qual modalidade vai praticar
+    <select id="sel_mod">
+        <option value="-">--Selecione uma modalidade--</option>
+        <option value="cor">Correr</option>
+        <option value="nad">Nadar</option>
+        <option value="ped">Pedalar</option>
+    </select>
+    <button onclick="Praticar()">Praticar Esporte</button>
+    <div id="div_mostrar" style="display: none;">
+        Atleta: <span id="sp_nome"></span> - Idade: <span id="sp_idade"></span> anos<br>
+
+        Km correndo: <span id="sp_kmcor"></span> (<span id="sp_porcor"></span>%)<br>
+        Km nadando: <span id="sp_kmnad"></span> (<span id="sp_pornad"></span>%)<br>
+        Km pedalando: <span id="sp_kmped"></span> (<span id="sp_porped"></span>%)<br>
+
+        Km total: <span id="sp_kmtotal"></span>
+    </div>
+</body>
+<script>
+    var correr = Number(0);
+    var nadar = Number(0);
+    var pedalar = Number(0);
+    var total = 0;
+    var porccor = 0;
+    var porcnad = 0;
+    var porcped = 0;
+    var nome = 0;
+    var idade = 0;
+    function Praticar(){
+        
+        nome = ipt_nome.value;
+        idade = ipt_idade.value;
+        tamanho = nome.length;
+        mod = sel_mod.value;
+        aleatorio = Number(Math.random());
+        qtd_kil = Number((aleatorio *2).toFixed(1));
+       
+        if(mod == "-"){
+            alert("selecione uma modalidade");
+        }
+        else{
+            if(tamanho >= 3 && (idade >= 18 && idade <= 80)){
+                if(correr > 10 && nadar > 10 && pedalar > 10){
+                    alert("Você completou o triatro");
+                    correr = Number(0);
+                    nadar = Number(0);
+                    pedalar = Number(0);
+                    total = 0;
+                    porccor = 0;
+                    porcnad = 0;
+                    porcped = 0;
+                    nome = 0;
+                    idade = 0;
+                    ipt_idade.value = '';
+                    ipt_nome.value = '';
+                    sel_mod.value = '-';
+                    div_mostrar.style.display = 'none';    
+                }
+                else{
+                    if(mod == 'cor'){
+                        
+                        if(correr >= 10){
+                            alert("Você não pode mais correr, ultrapassou o limite do triatro");
+                        }
+                        else{
+                            div_mostrar.style.display = 'block';
+                            correr = Number((correr + qtd_kil).toFixed(1)); 
+                            total = correr + pedalar + nadar;
+                            porccor = ((correr/total)*100).toFixed(2);
+                            porcnad = ((nadar/total)*100).toFixed(2);
+                            porcped = ((pedalar/total)*100).toFixed(2);
+                            sp_nome.innerHTML = `${nome}`;
+                            sp_idade.innerHTML = `${idade}`;
+                            sp_kmcor.innerHTML = `${correr}`;
+                            sp_porcor.innerHTML = `${porccor}`;
+                            sp_kmnad.innerHTML = `${nadar}`;
+                            sp_pornad.innerHTML = `${porcnad}`;
+                            sp_kmped.innerHTML = `${pedalar}`;
+                            sp_porped.innerHTML = `${porcped}`;
+                            sp_kmtotal.innerHTML = `${total}`;
+                        }
+                    }
+                    else if(mod == 'nad'){
+                        if(nadar >=10){
+                            alert("Você não pode mais nadar, ultrapassou o limite do triatro");
+                        }
+                        else{
+                            div_mostrar.style.display = 'block';
+                            nadar = Number((nadar + qtd_kil).toFixed(1));
+                            total = correr + pedalar + nadar;
+                            porccor = ((correr/total)*100).toFixed(2);
+                            porcnad = ((nadar/total)*100).toFixed(2);
+                            porcped = ((pedalar/total)*100).toFixed(2);
+                            sp_nome.innerHTML = `${nome}`;
+                            sp_idade.innerHTML = `${idade}`;
+                            sp_kmcor.innerHTML = `${correr}`;
+                            sp_porcor.innerHTML = `${porccor}`;
+                            sp_kmnad.innerHTML = `${nadar}`;
+                            sp_pornad.innerHTML = `${porcnad}`;
+                            sp_kmped.innerHTML = `${pedalar}`;
+                            sp_porped.innerHTML = `${porcped}`;
+                            sp_kmtotal.innerHTML = `${total}`;
+                        }    
+                    }
+                    else{
+                        if(pedalar >=10){
+                            alert("Você não pode mais pedalar, ultrapassou o limite do triatro");
+                        }
+                        else{
+                            div_mostrar.style.display = 'block';
+                            pedalar = Number((pedalar + qtd_kil).toFixed(1));
+                            total = correr + pedalar + nadar;
+                            porccor = ((correr/total)*100).toFixed(2);
+                            porcnad = ((nadar/total)*100).toFixed(2);
+                            porcped = ((pedalar/total)*100).toFixed(2);
+                            sp_nome.innerHTML = `${nome}`;
+                            sp_idade.innerHTML = `${idade}`;
+                            sp_kmcor.innerHTML = `${correr}`;
+                            sp_porcor.innerHTML = `${porccor}`;
+                            sp_kmnad.innerHTML = `${nadar}`;
+                            sp_pornad.innerHTML = `${porcnad}`;
+                            sp_kmped.innerHTML = `${pedalar}`;
+                            sp_porped.innerHTML = `${porcped}`;
+                            sp_kmtotal.innerHTML = `${total}`;
+                        }
+                    }
+                }    
+            }
+            else if(tamanho <3 && idade < 18){
+                alert("Seu nome é muito pequeno e você é muito jovem");
+            }
+            else if(idade < 18){
+                alert("Você é muito novo");
+            }
+            else if(idade > 80){
+                alert("Você é muito velho");
+            }
+            else{
+                alert("Seu nome é muito pequeno")
+            }
+        }
+    }
+</script>
+</html>

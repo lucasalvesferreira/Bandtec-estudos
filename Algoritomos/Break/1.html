@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sorteio hoje</h1>
+    <input id="id_ipt_sorteio" type="text"> <br>
+    <button onclick="btn_sorteio()">Testar minha sorte</button> <br> <br>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function btn_sorteio(){
+        msg.innerHTML = '';
+        var ipt_sorteio = Number(id_ipt_sorteio.value)
+        var i  = 0
+        var sorteado = 0
+        while ( i <= 20){
+            var num_sorte = (Math.random() * 100).toFixed();
+            if (num_sorte == ipt_sorteio ) {
+                sorteado ++
+            }
+            msg.innerHTML += `${num_sorte} <br>`;
+            i++
+        }
+        
+        if (sorteado >= 1){
+                alert(`Você é uma pessoa de sorte! Seu número saiu no ${sorteado}º sorteio`)
+            } else {
+                alert(`É, você não tem muita sorte em sorteios, pelo visto`)
+            }
+    }       
+</script>

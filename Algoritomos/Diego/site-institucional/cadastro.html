@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastra</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <body>
+        <div class="header">
+            <div class="container">
+                <h1>Marvels</h1>
+                <ul class="nav_bar">
+                    <li ><a href="index.html">Inicio</a></li>
+                    
+                    <!--<li><a href="pag2.html">Chame um heroi</a></li> -->
+                    
+                    <li>|</li>
+    
+                    <li><a href="login.html"> Login</a></li>
+    
+                    <li class="ativo"><a href="cadastro.html">Cadastro</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="div_banner">
+            <div class = "formCad">
+                <h2>Cadastre-se conosco</h2>
+                <div>
+                    <span>Nome</span><br>
+                    <input type="text" id="ipt_nome">
+                </div>
+                <div>
+                    <span>Email</span><br>
+                    <input type="text" id="ipt_email">
+                </div>
+                <div>
+                    <span>Senha</span><br>
+                    <input type="password" id="ipt_senha">
+                </div>
+                <div>
+                    <span>Telefone</span><br>
+                    <input type="text" id="ipt_tel">
+                </div>
+                <button onclick="Cadastrar()">Cadastrar</button>
+            </div>
+        </div>    
+        <div class="footer"><p>Feito com amor por um aluno Bandtec</p></div>
+        
+    </body>
+    <script>
+        function Cadastrar(){
+            Nome = ipt_nome.value;
+            Email = ipt_email.value;
+            Senha = ipt_senha.value;
+            Tel = ipt_tel.value;
+
+            alert("Bem vindo " + Nome);
+        }
+    </script>
+</html>

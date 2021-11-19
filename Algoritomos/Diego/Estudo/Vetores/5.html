@@ -1,0 +1,33 @@
+<!-- fazer 16 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cineminha HEHE</h1>
+    <input id="id_ipt_filmes" type="text"> Digite seus filmes favoritos
+    <button onclick="cadastrar()">Cadastrar</button>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    filmes = [];
+    function cadastrar(){
+        msg.innerHTML = ``;
+        var terceiro;
+        var ipt_filmes = id_ipt_filmes.value;
+        filmes.push(ipt_filmes);
+        if (filmes.indexOf(filmes[2]) == -1 ) {
+            terceiro = 'Ainda não existe'
+        } else {
+            terceiro = filmes[2]
+        }
+        msg.innerHTML = `Seu filme favorito: ${filmes[0]} <br> Seu 3º filme favorito: ${terceiro} <br> Total de filmes cadastrados: ${filmes.length}`;
+
+        
+    }
+</script>

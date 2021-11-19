@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id ="sel_tabuada" onchange="tabuada()">
+        <option value="">--Selecione um numero--</option>
+        <option value="2">Numero 2</option>
+        <option value="3">Numero 3</option>
+        <option value="4">Numero 4</option>
+        <option value="5">Numero 5</option>
+        <option value="6">Numero 6</option>
+        <option value="7">Numero 7</option>
+        <option value="8">Numero 8</option>
+        <option value="9">Numero 9</option>
+        <option value="10">Numero 10</option>
+    </select>
+    <div id="tabela"></div>
+</body>
+<script>
+    function tabuada(){
+        var valor = sel_tabuada.value;
+        var result2 = valor * 2; 
+        var result3 = valor * 3;
+        var result4 = valor * 4;
+        var result5 = valor * 5;
+        var result6 = valor * 6;
+        var result7 = valor * 7;
+        var result8 = valor * 8;
+        var result9 = valor * 9;
+        var result10 = valor * 10;
+        tabela.innerHTML = `${valor} x 2 = ${result2} <br>
+                            ${valor} x 3 = ${result3} <br>
+                            ${valor} x 4 = ${result4} <br>
+                            ${valor} x 5 = ${result5} <br>
+                            ${valor} x 6 = ${result6} <br>
+                            ${valor} x 7 = ${result7} <br>
+                            ${valor} x 8 = ${result8} <br>
+                            ${valor} x 9 = ${result9} <br>
+                            ${valor} x 10 = ${result10} <br>`;
+        
+    }
+</script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio_14_vetor</title>
+</head>
+<body>
+    <h1>Relatorios de estoque</h1>
+<br>
+<br>
+
+    Nome do produto: <input id="ipt_produto" placeholder="Produto"><br>
+    Preço de compra: <input id="ipt_preço" placeholder="Preço"><br>
+    <button onclick="Cadas()">Cadastrar</button><br>
+    <button onclick="Relato()">Relatorio de estoque</button><br>
+<br>
+    
+<div id="msg"></div>
+
+</body>
+</html>
+
+<script>
+    var Produto=[];
+    var Preço=[];
+    
+    function Cadas(){
+    
+        ipt_produto.value = '';
+        ipt_preço.value = '';
+        Produto.push(ipt_produto.value);
+        Preço.push(ipt_preço.value);
+        
+        msg.innerHTML='';
+    }
+    function Relato(){
+        msg.innerHTML+=`
+            <br> Total de produtos:${Produto.length}  <br>`;
+
+        for (var i = 0; i <Produto.length ; i++) {
+           
+            msg.innerHTML+=`
+        <br>
+            Produto :${i +1} ${Produto[i]} <br>
+            Preço de compra:R$:${Preço[i]}. Vender por:R$${Preço[i] * 0.25}.
+            `;
+            
+        }
+}
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio_20</title>
+</head>
+<body>
+ <h2>Veja sua sorte aqui ⬇</h2>
+ <Br>
+<button onclick="sorte()">🍀VerMinhaSorte🍀</button>
+<br>
+<br>
+<div id="msg"></div><br>
+<div id="msg2"></div>
+
+</body>
+</html>
+
+<Script>
+    
+    var amor0 = 0;
+    var jogo1 = 0;
+
+    function sorte(){
+
+        msg.innerHTML ='';
+        msg2.innerHTML ='';
+        amor0 =0;
+        jogo1 = 0;
+        
+        for (let index = 0; index < 21 ; index++) {
+            
+            var aleatorio = (Math.random() ).toFixed();
+            var guarda =+ aleatorio;
+
+            if (aleatorio <= 0){
+            msg.innerHTML += `${index} <img src ="https://www.meupositivo.com.br/doseujeito/wp-content/uploads/2020/08/jogos-de-carta.jpg", style="height: 100px;">`
+                jogo1 ++;
+            }  
+
+            else {
+            msg.innerHTML += `${index} <img src ="https://static.mundodasmensagens.com/upload/listas/m/e/mensagens-de-amor-V7rn7-fxl.png", style="height: 100px;">`
+            amor0 ++;
+        }
+    }
+    if(amor0 < jogo1 ){
+        msg2.innerHTML = `<br> ${amor0} Você tem mais sorte no amor!!`}
+
+        else {msg2.innerHTML =`<br> ${jogo1} Você tem mais sorte no jogo!!`}
+}
+
+</Script>

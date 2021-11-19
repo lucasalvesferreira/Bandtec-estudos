@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    qual o peso total que esta no elevador<input id="ipt_peso" type="text">
+    <button onclick="Ligar()">Ligar elevador</button>
+</body>
+<script>
+    function Ligar(){
+        var peso = ipt_peso.value;
+        if (peso < 500){
+            alert("Elevador vai se mover");
+        
+        }
+        else{
+            alert("Alguem precisa descer do elevador");
+        }
+    }
+</script>
+</html>

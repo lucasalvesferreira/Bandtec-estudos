@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite o valor do carro a vista<input id="ipt_carro" type="text">
+    Digite a taxa de juros (ao mês)<input id="ipt_juros" type="text">
+    Digite a quantidade de parcelas<input id="ipt_parcelas" type="text">
+    <button onclick="Calcular()">Calcular preju </button>
+    <div id="mostrar">
+</body>
+<script>
+    function Calcular(){
+        var carro = Number(ipt_carro.value);
+        var juros = Number(ipt_juros.value);
+        var parcelas = Number(ipt_parcelas.value);
+        //var taxa = '1.0' + juros; 
+        var total_pago =
+        mostrar.inner= `Seu carro vai sair por um total de R$A. 
+                        Após 1 mês, ele já vai valer só R$B.
+                        Porque comprou financiado, vai pagar o correspondente a C carros.`
+    }
+</script>
+</html>

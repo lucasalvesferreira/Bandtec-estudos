@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="Pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correçao_prova</title>
+</head>
+<body>
+    
+<h1>SDA-As melhores Camisetas</h1><br>
+<br>
+Insira a quantidade de camisetas:<input id="camis">
+<br>
+Selecione o tamanho:
+<select id="tama">
+<option value="sel_tama">Selecione o tamanho...</option>
+<option value="Grande">G</option>
+<option value="Pequena">P</option>
+</select>
+<br>
+Selecione a cor:
+<select id="cor">
+<option value="sel_cor">Selecione a cor...</option>
+<option value="Color">Coloridas</option>
+<option value="Branco">Brancas</option>
+</select>
+<br>
+
+Insira a distancia:<input id="ipt_km">
+<br>
+
+<button id="some" onclick="visualizar()" style="display: block;">Orçar</button>
+<br>
+<br>
+
+<div id="msg" style="display: none;">
+
+    <h3>Orçamento de vendas</h3>
+<br>
+    Quantidade Solicitada:<span id="span_Qtd" style="color: black;">999</span> 
+<br>
+    Produto Selecionado: <span id="span_Prod" style="color: black;">999</span>
+<br>
+    Tamanho Selecionado: <span id="span_Tam" style="color: black;">999</span>
+<br>
+    O valor total das mercadorias é de R$ <span id="span_Total" style="color: black;">999</span> 
+
+</div>
+
+</body>
+</html>
+
+<script>
+function visualizar(){
+
+
+    var BrancaPeq = 15;
+    var BrancaGran = 16;
+    var ColorPeq = 17;
+    var ColorGran = 18;
+
+    var Quantidade = span_Qtd == camis.value;
+    var Produto = span_Prod == cor.value;
+    var Tamanho = span_Tam == tama.value;
+    var Total = span_Total == k;
+
+    if(camis.value >= 2000){
+        alert('Consulte nosso PCP (Planejamento e controle de produçao!)');}
+    else if(camis.value < 100){
+        alert('Vendemos somente em Atacado')}
+
+    else if(ipt_km.value <= 0){
+        alert('Informar a distancia de entrega!')}
+
+    else if(tama.value == 'sel_tama'){
+        alert('Selecione o Tamanho')}
+
+    else if(cor.value == 'sel_cor'){
+        alert('Selecione a cor')}
+
+    else (parte2(),
+    alert('Seu orçamento é:'),
+        some.style.display ='none',
+        msg.style.display ='block')
+
+
+}
+function parte2(){
+    if(){}
+}
+
+</script>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARRINHO DE COMPRAS</title>
+</head>
+<body>
+    <span id = "span_prod" style ="display: block;">
+        Digite o produto comprado<input id="ipt_produto" type="text"><br>
+        Digite a quantidade do produto comprado<input id="ipt_qntd" type="text"><br>
+        Digite o valor do produto comprado<input id="ipt_valor" type="text"><br></span>
+    <button id="bt_carrinho" onclick="adicionar()">
+        <img src="carrinho.png" height="55px">
+    </button> <br>
+    <button id="bt_comprar" onclick="comprar()" style= "display:none" >
+        Comprar Mais
+    </button>
+    <button id="bt_finalizar" onclick="finalizar()" style= "display:none">
+        Finalizar
+    </button>
+        <div id="div_mostrar">
+        </div>
+</body>
+<script>
+    var valor_total = Number(0);
+    var qntd_total = Number(0);
+    function adicionar(){    
+        var produto;
+        var qntd = Number(0);
+        var valor = Number(0);    
+        qntd = Number(ipt_qntd.value);
+        valor = Number(ipt_valor.value);    
+        var resultado = qntd * valor;
+        produto = ipt_produto.value;
+        valor_total += resultado;
+        qntd_total += qntd
+        span_prod.style.display = 'none';
+        bt_carrinho.style.display = 'none';
+        bt_comprar.style.display = 'block';
+        bt_finalizar.style.display = 'block';
+        div_mostrar.innerHTML += ` O orçamento da quantidade ${qntd}  do produto  ${produto} é de R$ ${resultado.toFixed(2)}<br>`;
+        
+    }
+    function comprar(){
+        span_prod.style.display = 'block';
+        bt_carrinho.style.display = 'block';
+        bt_comprar.style.display = 'none';
+        bt_finalizar.style.display = 'none';
+        ipt_produto.value = '';
+        ipt_qntd.value = '';
+        ipt_valor.value = '';
+    }
+    function finalizar(){
+            alert( `A quantidade de itens orçados foi de ${qntd_total} e a soma desses orçamentos foi de R$${valor_total.toFixed(2)}  `);
+            ipt_produto.value = '';
+            ipt_qntd.value = '';
+            ipt_valor.value = '';
+            span_prod.style.display = 'block';
+            bt_carrinho.style.display = 'block';
+            bt_comprar.style.display = 'none';
+            bt_finalizar.style.display = 'none';
+            valor_total = Number(0);
+            qntd_total = Number(0);
+            produto = '';
+            qntd = Number(0);
+            valor = Number(0);   
+           div_mostrar.innerHTML = '';
+
+    }
+</script>
+</html>

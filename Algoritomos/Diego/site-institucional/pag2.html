@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chame um Heroi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Marvels</h1>
+            <ul class="nav_bar">
+                <li> <a href="index.html"></a>Inicio</li>
+                
+                <li class="ativo"><a href="pag2.html">Chame um Heroi</a></li>
+                
+                <li>|</li>
+
+                <li><a href="login.html"> Login</a></li>
+
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="div_proposito">
+        <div class="container">
+            <div class="conteudo">
+                Selecione o problema que você tem<br>
+                <select id="sel_prob">
+                    <option value="-">-- Selecione um problema --</option>
+                    <option value="gato">Seu gato está em cima da arvore?</option>
+                    <option value="mutante">Um cara com um capacete na cabeça e com poderes magneticos surgiu do nada </option>
+                    <option value="galactus">Um ser do tamanho do mundo ta querendo devorar a terra?</option>
+                    <option value="ultron">Um robo maluco esta querendo destruir a humanidade porque ele quer paz?</option>
+                    <option value="martelo">um cara que parece ter a uma cabeça de martelo está assaltando uma loja</option>
+                    <option value="ninjas">Do nada surgiram varios ninjas e eles querem destruir tudo</option>
+                </select><br>
+                Selecione um heroi para o seu problema<br>
+                <select id="sel_prob">
+                    <option value="-">-- Selecione um problema --</option>
+                    <option value="demolidor">Demolidor</option>
+                    <option value="vingadores">Vingadores </option>
+                    <option value="homem-aranha">Homem-Aranha</option>
+                    <option value="elektra">Elektra</option>
+                    <option value="quarteto">Quarteto Fantastico</option>
+                    <option value="xmen">X-men</option>
+                </select>
+                <button onclick="Escolhar()">Escolha</button>
+
+            </div>    
+        </div>
+    </div>
+
+    <div class="footer"><p>Feito com amor por um aluno Bandtec</p></div>
+</body>
+</html>

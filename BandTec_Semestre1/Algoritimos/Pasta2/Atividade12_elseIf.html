@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 12</title>
+</head>
+<body>
+    
+    <H1>Teste sua habilidade nos clicks!!</H1>
+<br>
+       <span style="font-size: 25px;"> Você ja clicou <b id="n_vezes" style="color: red;"> 0 </b> vezes!! </span>
+<br>
+<br> 
+
+    <button onclick="clicou()" style="color: rgb(82, 224, 39);border-radius: 100px  ;width: 200px;height: 200px;background-color: rgb(211, 9, 9);font-size: 50px;">
+     Clica Neu!</button>
+  
+<br>    
+<br>
+    <div id="msg" style="font-size: 25px;"> </div>
+    
+
+</body>
+</html>
+
+<script>
+    var ax_vezes = 0;
+    
+    function clicou(){
+        ax_vezes ++;
+        n_vezes.innerHTML = ax_vezes;
+
+        var total= ax_vezes ++;
+        if(total < 5){
+            msg.innerHTML = `Dedo fraquinho, hein!!!`
+        }
+        else if (total <= 10){
+            msg.innerHTML = `Dedo bom, hein!!!`
+        }
+        else if (total < 15){
+            msg.innerHTML = `Gosta de clicar, hein!!!`
+        }
+        else if (total > 15){
+            msg.innerHTML = `Eita dedo nervoso!!!`
+        }
+
+
+    }
+</script>

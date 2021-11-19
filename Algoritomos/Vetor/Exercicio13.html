@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio_13_vetor</title>
+</head>
+<body>
+    <H1>Cadastre a campanha de um time de futebol num campeonato:</H1>
+<br>
+<br>
+Indique o resultado:
+<select id="selc_opt">
+    <option value="op_indique">Indique...</option>
+    <option value="op_vitoria">Vitória</option>
+    <option value="op_empate">Empate</option>
+    <option value="op_derrota">Derrota</option>
+</select>
+<br>
+<button onclick="registrar()" >Registrar jogo</button>
+<br>
+Indique qual jogo que saber resultado:<input id="qualjogo" onchange="mudar()" placeholder="2º jogo">
+<br>
+<div id="msg"></div>
+<div id="msg2"></div>
+
+</body>
+</html>
+<script>
+    var vitoria =[];  
+    var empate =[];  
+    var derrota =[]; 
+    var todas= [];
+
+    function registrar(){
+  if(selc_opt.value == "op_indique"){
+      alert('Escolha um campo!!')}
+
+    else if(selc_opt.value =="op_vitoria"){
+        vitoria.push("vitoria");
+        todas.push("vitoria");
+    }
+    else if(selc_opt.value =="op_empate"){
+        empate.push("empate");
+        todas.push("empate");
+    }
+    else if(selc_opt.value =="op_derrota"){
+        derrota.push("derrota");
+        todas.push("derrota");
+    }
+
+    var ax_vit = vitoria.length * 3;
+    var ax_emp = empate.length * 1;
+    var ax_der = derrota.length * 0;
+    var ax_total = Number(ax_vit) + Number(ax_emp) +Number(ax_der);
+    var soma = todas.length;
+    var possiveis = soma * 3;
+    var ax_aproveita = ((ax_total / possiveis) *100).toFixed(2);
+
+
+    msg.innerHTML =`<br>
+    O time teve: ${vitoria.length} vitórias, ${empate.length} empates, ${derrota.length} derrotas.
+<br>
+    Pontuação total: ${ax_total} pontos.
+<br>
+    Aproveitamento: ${ax_aproveita}%`
+}
+function mudar(){
+
+    for (var i = 1; i < qualjogo.value; i++) {
+        
+         if(todas[qualjogo.value] != undefined ) {
+            msg2.innerHTML+=`<br>No ${i} jogo, o time ${todas.indexOf(qualjogo.value)}`
+            break;      
+        }
+        else {
+            msg2.innerHTML+=`<br> Não foi cadastrado um ${qualjogo.value}º jogo`;
+            break;          
+        }
+    }
+
+
+}
+
+</script>

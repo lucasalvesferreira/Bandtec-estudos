@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Veja o quanto de Lucro terá com uma plantação hidroponica<br>
+    Digite quantos hectares você tem de plantação:<input id="ipt_hectare" type="text">
+   Qual o tipo de alface que você planta:
+   <select id="tipo_alface">
+        <option value = "2.98">Mimosa</option>
+        <option value = "3.59">Lisa</option>
+        <option value = "3.25">Crespa</option>
+        <option value = "3.25">Americana</option>
+    </select>
+    <button onclick="Calcular()">Calcular</button>
+    <div id="mostrar">
+
+    </div>
+</body>
+
+<script>
+    function Calcular(){
+        var hectare = Number(0);
+        var alface = Number(70000);
+        var uni_alface = Number(tipo_alface.value - 2.00);
+        var uni_alface_hidro = Number(1.80);
+        hectare = (ipt_hectare.value);
+        var valor = hectare * alface * uni_alface;
+        var valor_hidro = hectare * alface * uni_alface_hidro;
+        var dife = valor_hidro - valor;
+        mostrar.innerHTML += `Você irá plantar em ${hectare} hectares<br>
+                             Da pra plantar cerca de ${alface} pés de alface por hectare<br>
+                             
+                             Sendo o valor unitario da alface que você escolheu R$${uni_alface.toFixed(2)}<br>
+                             Já numa um alface hidroponico o valor unitario será R$${uni_alface_hidro.toFixed(2)}<br>
+                             Sendo assim, você plantando numa solução nao hidroponica o valor recebido será R$${valor.toFixed(2)}<br>
+                             E numa solução hidroponica o valor recebido será R$${valor_hidro.toFixed(2)}<br>
+                             com uma diferença de R$${dife.toFixed(2)} entre as soluções<br><br>  `;
+
+    }
+</script>
+</html>

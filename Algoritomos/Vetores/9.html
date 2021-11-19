@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="ipt_projeto" type="text"> Nome cada projeto que fez na sua vida  <br>
+    <button onclick="registrar()">Registrar projeto</button> <br><br>
+    <button onclick="mostrar()">Mostrar Projetos</button>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    var lista = [];
+    var nivel;
+    function registrar(){
+        msg.innerHTML = '';
+        v_projeto = ipt_projeto.value;
+        lista.push(v_projeto)
+        if (lista.length <= 4) {
+            nivel = 'Júnior'
+        } else if (lista.length <= 12 && lista.length >= 5){
+            nivel = `Pleno deste projeto "${lista[4]}" `
+        } else if (lista.length >= 13) {
+            nivel = `Senior deste projeto "${lista[12]}`
+        }
+
+        msg.innerHTML = `Você já fez ${lista.length} projeto. Por isso você é profissional ${nivel} <br>`
+
+    }
+    function mostrar(){
+        for (var i = lista.length -1; i > 0; i --)
+        msg.innerHTML += `${lista[i]} <br>`
+    }
+</script>

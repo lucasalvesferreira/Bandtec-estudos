@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um numero da progressão<input id="ipt_num" type="text"><br>
+    Digite a razão<input id="ipt_razao" type="text"><br>
+    Digite o termo da progressão<input id="ipt_termo" type="text"><br>
+    <button onclick="Calcular()">Calcular PG</button><br>
+    <div id="mostra">
+
+    </div>
+</body>
+<script>
+    function Calcular(){
+        var numero = Number(ipt_num.value);
+        var razao = Number(ipt_razao.value);
+        var termo = Number(ipt_termo.value);
+        var resultado = numero *(razao**(termo-1));
+        mostra.innerHTML = `O ${termo}° termo nessa PG será ${resultado}`;
+    }
+    
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A historia de uma pizza </title>
+</head>
+<body>
+
+<h1>A história de uma pizza</h1><br>
+
+    <Button onclick='Chegou()' > Acabou de chegar </Button>
+    <Button onclick='Apos1()' > Depois de 1 minuto</Button>
+    <Button onclick='Apos5()' > Depois de 5 minutos</Button>
+    <Button onclick='Apos15()' > Depois de 15 minutos</Button>
+    <Button onclick='Outra()' > Pedir Outra</Button>
+
+    <div id="Pizza"></div>
+
+</body>
+</html>
+
+<script>
+    function Chegou() {Pizza.innerHTML = '<img src= "https://tpaempreendimentos.com.br/blog/wp-content/uploads/2019/02/shutterstock-84904912-1024x683.jpg" style="width:300px;">'};
+    function Apos1() {Pizza.innerHTML = '<img src= "https://media.istockphoto.com/photos/pizza-missing-one-piece-picture-id491118846" style="width:300px;">'};
+    function Apos5() {Pizza.innerHTML = '<img src= "https://thumbs.dreamstime.com/b/metade-da-pizza-no-fundo-branco-98559675.jpg" style="width:300px;">'};
+    function Apos15() {Pizza.innerHTML = '<img src= "https://st3.depositphotos.com/9006966/37060/i/600/depositphotos_370602452-stock-photo-slice-of-pizza-ham-on.jpg" style="width:300px;">'};
+    function Outra() {Pizza.innerHTML = ''};
+</script>
+

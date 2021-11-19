@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Sorte()">Ver minha Sorte</button>
+    <div id="imagens"></div>
+    <div id="imagens1"></div>
+</body>
+<script>
+    function Sorte(){
+        var numero_2 = Number(0);
+        var numero = Number(0);
+        var coracao = Number(0);
+        var jogo = Number(0);
+
+        for(cont=1;cont<=21;cont++){
+            numero_2 = Math.random();
+            numero = (numero_2* 100).toFixed(0) ;
+            if(numero%2 == 0){
+                imagens.innerHTML += `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Naipe_copas.png/231px-Naipe_copas.png"  style="width:320px; height:350px">`;
+                coracao ++;
+            }
+            else{
+                imagens.innerHTML += `<img src="https://m.horoscopovirtual.com.br/imagem/artigos/interno/images/rei%20de%20copas.png" style="width:320px; height:350px">`;
+                jogo ++;
+            }
+        }
+        if(coracao>jogo){
+            alert("Você tem mais sorte no amor")
+        }
+        else{
+            alert("Você tem mais sorte no jogo");
+        }
+
+
+    }
+</script>
+</html>

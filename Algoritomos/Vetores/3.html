@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="ipt_bairro" type="text"> DIgite seu bairro <br>
+  <button onclick="cadastrar()">Cadastrar</button> <br> <br> <br>
+    Veja o cadastro:
+    <input id="ipt_casa" type="number"> Qual casa? <br>
+    <button onclick="relembrar()">Relembrar moradia</button> <br>
+</body>
+</html>
+<script>
+    lista = [];
+    var bairro;
+    function cadastrar(){
+        console.log(lista)
+        bairro = ipt_bairro.value;
+        lista.push(bairro);
+        ipt_bairro.value = '';
+    }
+    function relembrar(){
+        var casa = Number(ipt_casa.value);
+       
+       
+        maximo = casa > lista.length;
+        zero = casa <= 0;
+   
+        console.log (casa);
+        
+
+        if (casa > lista.length) {
+            alert('Você não morou em tudo isso')
+        }
+            
+        if (casa  <= 0) {
+            alert('Digite um numero maior que 0')
+        }  
+
+        if (maximo == false && zero == false) {
+            alert( lista[casa -1] )
+        }
+        
+        
+    
+    }
+</script>
+
+

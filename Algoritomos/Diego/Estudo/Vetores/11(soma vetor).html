@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="id_ipt_produto" placeholder="Digite um produto">
+    <input id="id_ipt_preco" type="text" placeholder="Qual o preço do produto?"> 
+    <button onclick="cadastrar()">Cadastrar</button><br>
+    <button onclick="atualizar()">Atualizar estoque</button>
+    <div id="msg"></div>
+
+</body>
+</html>
+<script>
+    preco = [];
+    produto = [];
+    var soma = 0;
+    function cadastrar(){
+        var ipt_preco = id_ipt_preco.value;
+        var ipt_produto = id_ipt_produto.value;
+            preco.push(Number(ipt_preco));
+            produto.push(ipt_produto);
+
+    }
+    function atualizar(){
+        msg.innerHTML = ''
+        for (var i = 0; i < preco.length ;i++) {
+            soma = soma + preco[i]
+        }
+        msg.innerHTML = `Você tem ${produto.length} produtos cadastrados em estoque <br> Seu estoque vale R$${soma}`
+    }
+</script>

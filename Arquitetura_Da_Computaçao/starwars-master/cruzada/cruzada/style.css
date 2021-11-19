@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    }
+    @media (max-width: 1920px){
+        .altura{
+            height: 277px;
+        }
+    }
+    @media (max-width: 1366px){
+        .altura{
+            height: 0px;
+        }
+    }
+    body{
+        background: url('https://a-static.besthdwallpaper.com/lapis-motosserra-papel-de-parede-2880x1620-29869_52.jpg') center center no-repeat fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    font-family: monospace;
+    }
+    header h1{
+    text-align: center;
+    font-size: 30px;
+    }
+    
+    
+    table {
+        border: 1px #EC7063 solid;
+        font-size:25px; 
+        margin-left: 130px;
+        margin: auto;
+    }
+    
+    
+    tr {
+        border: 1px #EC7063 solid;
+    }
+    
+    td {
+        border: 1px #EC7063 solid;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        vertical-align: center;
+    }
+    
+    button{
+        border: 0px;
+        background-color: #EC7063;
+        color: #ffffff;
+        padding: 15px;
+        font-size: 20px;
+        border-radius: 20px;
+        transition-duration: 0.8s;
+        cursor: pointer;
+        border: 1px solid #EC7063;
+    }
+    button:hover{
+        background-color: #ffffff;
+        color: #EC7063;
+        border: 1px solid #EC7063;
+    }
+    
+    .container{
+        width: 1100px;
+        margin: auto;
+    }
+    
+    #div_game{
+        background-color: #ffffff;
+        margin: auto;
+        width: 800px;
+        padding: 15px;
+    }
+    
+    #div_questions{
+    background-color:#85C1E9;
+    width: 700px;
+    margin: auto;
+    padding: 20px;
+    }
+    
+    .button{
+        margin: auto;
+        display: inline-block;
+    }
+    
+    #button_verify{
+        width: 100px;
+        margin-top: 20px;
+    }
+    #input_answer{
+        width: 100px;
+        margin: auto;
+        padding: 6px 40px;
+    }
+    
+    .deadCell{
+        background-color: #EC7063;
+    }
+    .availableCell{
+        background-color: #ffffff;
+    }
+    
+    footer{
+        height: 80px;
+        background-color: #2C3E50;
+        color: #ffffff;
+        font-size: 15px; 
+        margin-bottom: 0;
+        padding: 0;
+        bottom: 0;
+    }
+    footer p{
+        text-align: center;
+    
+    }
+    #div_information{
+        width: 80%;
+        margin: auto;
+        background-color: #85C1E9;
+        font-size: 20px;
+        padding: 50px;
+    }
+    
+    
+    #div_verifiedAnswer{
+        width: 500px;
+        height: 70px;
+        margin: auto;
+        text-align: center;
+        font-size: 20px;
+        vertical-align:center;
+        margin-bottom: 20px;
+    }
+    .correctAnswer{
+        background-color: #58D68D;
+        color: #196F3D;
+        border:1px #196F3D solid;
+    }
+    .wrongAnswer{
+        background-color: #EC7063  ;
+        color: #7B241C;
+        border:1px #7B241C solid;
+    
+    }
+    #input_answer{
+        border-color: #EC7063;
+        border-style: solid;
+        border-radius: 15px;
+        border-right: 1px;
+        border-top: 1px;
+    }

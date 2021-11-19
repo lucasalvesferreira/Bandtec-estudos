@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Jogo</h1>
+    <select name="" id="select_box">
+        <option value="vitoria">vitoria</option>
+        <option value="empate">empate</option>
+        <option value="derrota">derrota</option>
+    </select>  <br> <br>
+    <button onclick="registrar()">Registrar jogo</button> 
+    <input id="id_ipt_jogo" oninput="indicar()" type="number" placeholder="Resultado do jogo Nª...">
+    <br>
+    <div id="msg"></div>
+    <div id="msg2"></div>
+
+</body>
+</html>
+<script>
+    resultado = [];
+    function registrar(){
+        msg2.innerHTML = '';
+        msg.innerHTML = '';
+        var box = select_box.value;
+        var v_vitoria = 0;
+        var v_empate = 0;
+        var v_derrota = 0;   
+      
+
+        if (box == 'vitoria' ){
+            resultado.push('ganhou')
+        } else if (box == 'empate'){
+            resultado.push('empatou')
+        } else if (box == 'derrota') {
+            resultado.push('perdeu')
+        };
+
+        for (var i = 0; i <= resultado.length; i++){
+            if (resultado[i] == 'ganhou') {
+                v_vitoria ++;
+            } else if (resultado[i] == 'empatou') {
+                v_empate ++
+            } else if (resultado[i] == 'perdeu') {
+                v_derrota ++
+            }
+        }
+
+        msg.innerHTML = `O time teve: ${v_vitoria} vitórias, ${v_empate} empates, ${v_derrota} derrotas <br> Pontuação total: ${(v_vitoria * 3) + v_empate} pontos <br> Aproveitamento: ${(((v_vitoria * 3) + v_empate) / ((resultado.length * 3)) * 100).toFixed()}%`;
+
+    }
+
+    function indicar(){
+        msg2.innerHTML = '';
+        var ipt_jogo = Number(id_ipt_jogo.value);
+        var saida = `${'ganhou' || 'empatou' || 'perdeu'}`
+        if (ipt_jogo == '') {
+            msg2.innerHTML = ''
+        } else if (resultado.length < ipt_jogo) {
+            msg2.innerHTML = `Não foi cadastrado um ${ipt_jogo}º jogo`
+        } else {
+                for (var i = 0; i <= resultado.length; i++){
+                msg2.innerHTML = `No ${ipt_jogo}º jogo, o time ${resultado[ipt_jogo -1]}`;
+            }
+        }
+       
+    }
+</script>
+
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio_Tuvalu</title>
+</head>
+<body>
+    
+        <h1> Classes sociais Tuvalu </h1>
+<br>
+        Insira sua renda: <Input onchange="calcular()" id="renda" >
+
+            <div id="sapo" style="background-color: cadetblue ;width: 110px; height: 40px;"> </div>
+
+</body>
+</html>
+
+<script>
+function calcular()
+ {
+
+        if      (renda.value > 9500) {
+            sapo.innerHTML= `Classe A`;
+        }
+        else if (renda.value > 2500 ) {
+            sapo.innerHTML= `Classe B`;
+        }
+        else if (renda.value > 900) {
+            sapo.innerHTML= `Classe C`;
+        }
+        else if (renda.value > 250) {
+            sapo.innerHTML= `Classe D`;
+        }
+        else { sapo.innerHTML = `Classe E`;}
+    }       
+
+</script>

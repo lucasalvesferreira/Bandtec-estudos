@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite sua idade<input id="ipt_idade" type="text">
+    <button onclick="Idade()">Mostrar fases da vida</button>
+    <div id="div_mostrar"></div>
+</body>
+<script>
+    function Idade(){
+        idade = ipt_idade.value;
+        div_mostrar.innerHTML = ``;
+        for(cont=0;cont<=idade;cont++){
+            if(cont<=4){
+                div_mostrar.innerHTML += `${cont} anos(Primeira Infância)<br>`;
+            }
+            else if(cont<=6){
+                div_mostrar.innerHTML += `${cont} anos(Pré-escolar)<br>`;
+            }
+            else if(cont<=10){
+                div_mostrar.innerHTML += `${cont} anos(Segunda Infância)<br>`;
+            }
+            else if(cont<=18){
+                div_mostrar.innerHTML += `${cont} anos(Adolescência)<br>`;
+            }
+            else if(cont<=50){
+                div_mostrar.innerHTML += `${cont} anos(Adulto)<br>`;
+            }
+            else if(cont<=100){
+                div_mostrar.innerHTML += `${cont} anos(Melhor idade)<br>`;
+            }
+            else if(cont>100){
+                div_mostrar.innerHTML += `${cont} anos(Matusalém)<br>`;
+            }
+        }
+    }
+</script>
+</html>

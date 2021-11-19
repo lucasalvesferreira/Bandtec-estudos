@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Prêmio FIFA</h1>
+    <input id="id_num" type="text" placeholder="Mundiais do seu time">
+    <button onclick="ver()">Ver troféus de mundiais FIFA</button> <br>
+    <div id="_img_"></div>
+   
+    
+</body>
+</html>
+<script>
+    function ver() {
+        var contador = 0;
+        var num = Number(id_num.value);
+        _img_.innerHTML = ''
+       
+        
+        if (!(num > 0)) {
+                _img_.innerHTML = `<img width="150px" src="https://static-wp-tor15-prd.torcedores.com/wp-content/uploads/2016/11/torcedor-palmeiras.png" alt="torcedor chorando"  <br>`
+            } else {
+                while (contador < num) {
+                    // console.log('teste')
+                    _img_.innerHTML += `<img style="display: flex" width="150px" src="https://cdnv2.moovin.com.br/ztrez/imagens/produtos/det/trofeu-futebol-a04-a.jpg" alt="foto trofeu"  <br> `
+                    contador ++;
+                }
+               
+            }
+
+
+
+        
+    }
+</script>
+
+<!-- 10. Crie um programa em HTML/JS o qual:
+
+a) Solicite ao usuário a quantidade de títulos mundiais da FIFA que seu clube tem
+
+b) Ao clicar num botão "Ver troféus de mundiais FIFA"...
+
+c) Devem aparecer, abaixo do botão, N imagens de um troféu, onde N é o valor informado em a). Porém...
+
+d) Caso o valor informado em a) seja 0 ou menos, a imagem que deve aparecer apenas uma vez abaixo do botão é de um torcedor do time chorando -->

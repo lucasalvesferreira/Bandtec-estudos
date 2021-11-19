@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+    <style>
+    </style>
+
+</head>
+<body>
+<center>
+
+        <h1>  Seja bem-vindo ao Banco KNAB </h1>
+    <br><br>
+
+        <h2> Simulação de Empréstimos e Investimentos</h2>
+    <br><br>
+
+        <h3>Entre com os dados de sua Conta</h3>
+
+        <div id="D1">
+
+        <br><br>
+
+            <input type="text" placeholder="Conta" id="I1">
+            <input type="text" placeholder="Dígito" id="I2">
+            <input type="password" placeholder="Senha" id="I3">
+
+        <br><br> 
+            <button onclick="O1()">Simular</button>
+
+        <br> <br>
+
+        </div>
+
+    <div id="D2" style="display: none;">
+        Valor da Operação: <input type="text" placeholder="Valor" id="I4">
+        <br><br>
+
+        <select id="TB1">
+            <option atrib disabled;> - Selecione a Operação - </option>
+            <option value="V2"> Empréstimo </option>
+            <option value="V1"> Investimento </option>
+        </select>
+
+        <select id="TB2">
+            <option atrib disabled; > - Selecione o Prazo - </option>
+            <option value="curto"> Curto </option>
+            <option value="médio"> Médio </option>
+            <option value="longo"> Longo </option>
+        </select>
+
+        <br><br>
+        <button onclick="O2()">Mostrar o Resultado</button>
+
+    </div>
+
+    <div id="D3" style="display: none;">
+        
+        <button onclick="O3()">Voltar a Simulação</button>
+    <br><br>
+        <div id="D4" style="font-weight: bolder;"></div>
+
+    </div>
+
+<br> <br>
+
+</center>
+    
+</body>
+</html>
+
+<script>
+
+    var A1 = '';
+
+    function O1() {
+
+        var A = Number(I1.value);
+        var B = A % 11;
+
+        if (I1.value <= 0) {
+            alert ('Verifique o número da conta');
+        
+        } else if (I2.value != B ) {
+            alert (`Digito que ser igual a resto da divisão da conta por 11`);
+
+        } else if ((I2.value == 0 || I2.value == 1 || I2.value == 2 || I2.value == 3) && I3.value == 'manaus' ) {
+            D1.style.display = 'none';
+            D2.style.display = 'block';
+
+        } else if ((I2.value == 4 || I2.value == 5 || I2.value == 6 || I2.value == 7) && I3.value == 'recife' ) {
+            D1.style.display = 'none';
+            D2.style.display = 'block';
+
+        } else if ((I2.value == 8 || I2.value == 9 || I2.value == 10) && I3.value == 'fortaleza' ) {
+            D1.style.display = 'none';
+            D2.style.display = 'block';    
+        
+        } else {
+            alert  (`Verifique a senha`);
+        }
+    }
+
+    function O2() {
+
+        A1 ++;
+        D2.style.display = 'none';
+        D3.style.display = 'block';
+
+        if (TB2.value == 'curto' || TB2.value == 'médio' ) {
+            alert  (`Esta operação está condicionada ao seu perfil`);
+        }
+               
+        if (TB1.value == 'V1' && TB2.value == 'curto' ) {
+            D4.innerHTML += `Simulação ${A1} – Para o investimento de R$${I4.value} no ${TB2.value} prazo será cobrado os juros de R$ ${(I4.value*(0.05)).toFixed(2)} ao ano <br>`;
+        
+        } else if (TB1.value == 'V2' && TB2.value == 'médio' ) {
+            D4.innerHTML += `Simulação ${A1} – Para o empréstimo de R$${I4.value} no ${TB2.value} prazo será cobrado os juros de R$ ${(I4.value*(0.16)).toFixed(2)} ao ano <br>`;
+
+        } else if (TB1.value == 'V1' && TB2.value == 'longo' ) {
+            D4.innerHTML += `Simulação ${A1} – Para o investimento de R$${I4.value} no ${TB2.value} prazo será cobrado os juros de R$ ${(I4.value*(0.12)).toFixed(2)} ao ano <br>`;
+
+        } else if (TB1.value == 'V2' && TB2.value == 'curto' ) {
+            D4.innerHTML += `Simulação ${A1} – Para o empréstimo de R$${I4.value} no ${TB2.value} prazo será cobrado os juros de R$ ${(I4.value*(0.24)).toFixed(2)} ao ano <br>`;
+
+        } else if (TB1.value == 'V1' && TB2.value == 'médio' ) {
+            D4.innerHTML += `Simulação ${A1} – Para o investimento de R$${I4.value} no ${TB2.value} prazo será cobrado os juros de R$ ${(I4.value*(0.08)).toFixed(2)} ao ano <br>`;
+   
+        } else if (TB1.value == 'V2' && TB2.value == 'longo' ) {
+            D4.innerHTML += `Simulação ${A1} – Para o empréstimo de R$${I4.value} no ${TB2.value} prazo será cobrado os juros de R$ ${(I4.value*(0.10)).toFixed(2)} ao ano <br>`;
+        }
+    }
+    
+    function O3() {
+
+        D3.style.display = 'none';
+        D2.style.display = 'block';
+
+    }
+</script>

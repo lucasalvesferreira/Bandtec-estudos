@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de peso 2</title>
+</head>
+<body>
+    
+    Quantos pães franceses você come por dia?:
+    <input id="inp_pao">
+
+    <br><br>
+
+    Quantos pacotes de bolacha você come por dia?:
+    <input id="inp_bol" >
+
+<br><br>
+
+    Quantos copos de achocolatado você consome por dia?:
+    <input id="inp_choc"> 
+
+<br><br>
+
+    <button onclick="Calcular()">Avaliar</button>
+
+    <br><br><br>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+<script>
+function Calcular(){
+    var pao = Number(inp_pao.value * 50);
+    var bolacha = Number(inp_bol.value * 80);
+    var choco = Number(inp_choc.value * 70);
+    var total = pao + bolacha + choco 
+
+    if(total <200){
+        div_men.innerHTML = ("Parabéns, vai sair em forma da quarentena!");
+    }
+    else if(total <400){
+        div_men.innerHTML = ("Cuidado, vai ficar mais fofinho(a)");
+    }
+    else {
+        div_men.innerHTML = ("Bom, acho que muitos não vão te reconhecer após a quarentena"); 
+    }
+
+
+
+}
+
+
+
+</script>
